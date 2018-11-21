@@ -1,11 +1,24 @@
-# Made by : Lucas, Antonin, Elodie, Killian
 
-############ DEPENDANCE ###############
+# Dependance
 
 composer require "twig/twig:^2.0"
 npm install bootstrap
 
-#######################################
+
+# Arborescence
+
+-views
+-conttrollers
+-models
+-index.php
+-img/svg/
+-js
+-scss/bootstrap/
+-README
+-.gitignore
+-vendor
+-.htaccess
+
 
 # Détail du projet
 
@@ -16,7 +29,7 @@ Projet annuaire de films
 
    La premiere:
 
-   A) Préparation de la données
+A) Préparation de la données
 
        -désigner un master sur github qui créera un csv avec,
 
@@ -40,6 +53,7 @@ Projet annuaire de films
 
 B) Développement du site MVC
 
+
         -Creation du .htaccess qui redirige vers l'index.php
 
         -Création d'un routeur avec $_SERVER['REQUEST_URI'] et un switch
@@ -51,3 +65,4 @@ B) Développement du site MVC
 Bon courage, Access Code School
 
 
+# Made by : Lucas, Antonin, Elodie, Killian
