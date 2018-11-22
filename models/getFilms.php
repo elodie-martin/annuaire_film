@@ -17,7 +17,7 @@ function getFilms () {
 
     }
     $num = 1;
-    $sql = 'SELECT * FROM films';
+    $sql = 'SELECT * FROM Film';
     $response = $bdd->prepare( $sql );
     // $response->bindParam(':num', $num, PDO::PARAM_INT)
     $response->execute();
@@ -27,8 +27,6 @@ function getFilms () {
 
 
 }
-
-
 
 
 

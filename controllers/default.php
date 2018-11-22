@@ -8,9 +8,7 @@ $twig = new Twig_Environment($loader);
 
 $list = getFilms();
 
-echo $twig->render('index.twig', array('message' => "Hello World !", 'liste' => $list ));
-
-
+echo $twig->render('default.twig', array('message' => "Hello World !", 'liste' => $list));
 
 
 ?>
