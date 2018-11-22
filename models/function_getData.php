@@ -1,6 +1,6 @@
 <?php 
 
-function getFilms () {
+function getData ($sql) {
 
 	$username = 'root';
 	$password = 'online@2017';
@@ -17,14 +17,13 @@ function getFilms () {
 
     }
     $num = 1;
-    $sql = 'SELECT * FROM films';
+    
     $response = $bdd->prepare( $sql );
     // $response->bindParam(':num', $num, PDO::PARAM_INT)
     $response->execute();
-    $list = $response->fetchAll(PDO::FETCH_ASSOC);
+    $data = $response->fetchAll(PDO::FETCH_ASSOC);
 
-    return $list;
-
+    return $data;
 
 }
 

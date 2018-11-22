@@ -1,7 +1,5 @@
 <?php 
-	
 
-	include 'controllers/welcom.php';
-	
+	include 'controllers/default.php';
 
 ?>
