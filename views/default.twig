@@ -1,20 +1,61 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <title>MOOVIZ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="annuaire de film de type allociné">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="scss/main.css">
+
 </head>
+
 <body>
-	
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At assumenda facere perspiciatis quasi. Illo rerum consequuntur labore non voluptates placeat saepe nostrum ducimus, iusto, velit. Quis quasi aperiam reiciendis maiores. </p>
+    <header id="header" class="container-fluid">
+        <h1>MOOVIZ</h1>
+
+        <nav>
+            <ul>
+                <li>
+                    Par genre :
+                    <ul>
+                        {% for genre in genres %}
+                        <li> <a href=""> {{ genre }} </a> </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li>
+                    Par auteur :
+                    <ul>
+                        {% for auteur in auteurs %}
+                        <li> <a href=""> {{ auteur }} </a> </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li>
+                    Par année :
+                    <ul>
+                        {% for year in years %}
+                        <li> <a href=""> {{ year }} </a> </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header> <!-- FIN HEADER -->
+    <main class="container-fluid">
+
+    </main> <!-- FIN MAIN -->
+
+    <footer class="container-fluid">
+
+    </footer> <!-- FIN FOOTER -->
 
 
-	<h1>{{ message }}</h1>
-	{% for array in liste %}
-		{% for film in array %}
-			<li>{{ film }}</li>
-		{% endfor %}
-	{% endfor %}
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" icrossorigin="anonymous"></script>
 </body>
+
 </html>

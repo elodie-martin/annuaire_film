@@ -4,8 +4,10 @@
 function getData ($sql) {
 
 	$username = 'root';
-	$password = 'online@2017';
-	$database ='projet_annuaire_films';
+	// $password = 'online@2017';
+	// $database ='projet_annuaire_films';
+    $password = '09001268lrlr';
+    $database ='annuaire_film';
 	$host = 'localhost';
 
     try{
@@ -17,7 +19,6 @@ function getData ($sql) {
         die('Erreur : ' . $e->getMessage());
 
     }
-    $num = 1;
 
     $response = $bdd->prepare( $sql );
     // $response->bindParam(':num', $num, PDO::PARAM_INT)
