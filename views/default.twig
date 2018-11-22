@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At assumenda facere perspiciatis quasi. Illo rerum consequuntur labore non voluptates placeat saepe nostrum ducimus, iusto, velit. Quis quasi aperiam reiciendis maiores. </p>
+
+
+	<h1>{{ message }}</h1>
+	{% for array in liste %}
+		{% for film in array %}
+			<li>{{ film }}</li>
+		{% endfor %}
+	{% endfor %}
+
+</body>
+</html>
