@@ -4,10 +4,9 @@
 function getData ($sql) {
 
 	$username = 'root';
-	// $password = 'online@2017';
-	// $database ='projet_annuaire_films';
-    $password = '09001268lrlr';
-    $database ='annuaire_film';
+	$password = 'online@2017';
+	$database ='projet_annuaire_films';
+  
 	$host = 'localhost';
 
     try{
