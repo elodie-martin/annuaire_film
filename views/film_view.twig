@@ -2,8 +2,20 @@
 
 {% block film %}
    
-	osdishfs
-	
+	<!-- // Chaques films est affiché sous forme de carte qui défileront dans un carroussel  -->
+	<div class="card">
 
-   
+		<h1 class="card-title">{{ film.Titre }}</h1>
+
+		<ul>
+			<li>Date de sortie : <a href="">{{ film.Sortie }}</a></li>
+			<li>Auteur : <a href="">{{ film.Prenom }} {{ film.Nom }}</a></li>
+			<li>Genre: <a href="">{{ film.Genres }}</a></li>
+		</ul>
+
+		<p class="card-description">{{ film.Description }}</p>
+		
+
+	</div>
+
 {% endblock %}
