@@ -8,6 +8,6 @@ $twig = new Twig_Environment($loader);
 
 $list = getData('SELECT * FROM Film');
 
-echo $twig->render('default.twig', array('message' => "Hello World !", 'liste' => $list ));
+echo $twig->render('home_view.twig', array('message' => "Hello World !", 'liste' => $list ));
 
 ?>
