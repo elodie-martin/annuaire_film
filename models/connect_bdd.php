@@ -1,7 +1,6 @@
 <?php 
 
-
-function getData ($sql) {
+    // Fichier pour se connecter à la base de donnée.
 
 	$username = 'root';
 	$password = 'online@2017';
@@ -19,12 +18,6 @@ function getData ($sql) {
 
     }
 
-    $response = $bdd->prepare( $sql );
-    // $response->bindParam(':num', $num, PDO::PARAM_INT)
-    $response->execute();
-    $data = $response->fetchAll(PDO::FETCH_ASSOC);
-
-    return $data;
-}
+    
 
 ?>
