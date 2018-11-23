@@ -1,13 +1,14 @@
 <?php 
-require_once("models/function_getData.php");
+
+require_once("models/connect_bdd.php");
 
 function getList() {
 
-	// Accéder à la variable $bdd du fichier function_getData.php
+	// Accéder à la variable $bdd du fichier connect_bdd.php
 	global $bdd;
 
 	// ICI METTRE LA REQUETE
-	$sql = ""
+	$sql = "SELECT * FROM Film";
 	$response = $bdd->prepare( $sql );
     $response->execute();
     $list = $response->fetchAll(PDO::FETCH_ASSOC);
