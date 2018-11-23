@@ -45,6 +45,19 @@
         </nav>
     </header> <!-- FIN HEADER -->
     <main class="container-fluid">
+        
+        
+        {% for array in films %}
+          
+            <li> <a href="/film/{{ array.ID }}"> {{ array.Titre }} </a> </li>
+        
+        {% endfor %}
+
+
+
+        {% block owners %}{% endblock %}
+        {% block years %}{% endblock %}
+        
 
     </main> <!-- FIN MAIN -->
 

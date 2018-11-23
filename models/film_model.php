@@ -8,7 +8,7 @@ function getList() {
 	global $bdd;
 
 	// ICI METTRE LA REQUETE
-	$sql = "SELECT * FROM Film";
+	$sql = "SELECT ID,Titre FROM Film";
 	$response = $bdd->prepare( $sql );
     $response->execute();
     $list = $response->fetchAll(PDO::FETCH_ASSOC);

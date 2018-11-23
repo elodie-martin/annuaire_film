@@ -6,8 +6,10 @@ require_once('models/film_model.php');
 $loader = new Twig_Loader_Filesystem('views');
 $twig = new Twig_Environment($loader);
 
-$list = getList('SELECT * FROM Film');
+$films = getList('SELECT ID, Titre FROM Film');
 
-echo $twig->render('home_view.twig', array('message' => "Hello World !", 'liste' => $list ));
+// print_r($films);
+
+echo $twig->render('home_view.twig', array('films' => $films));
 
 ?>

@@ -8,12 +8,15 @@
 		$id = (count($requete) < 4)? 0 : intval($requete[3]);
 
 		switch ($controller) {
-			case 'hotel':
+			case 'owners':
 				require_once("controllers/owners_controller.php");
 				break;
-			case 'chambre_hote':
+			case 'years':
 				require_once("controllers/years_controller.php");
 				break;
+			case 'film':
+				require_once("controllers/film_controller.php");
+				break;	
 			default:
 				require_once("controllers/home_controller.php");
 				break;
