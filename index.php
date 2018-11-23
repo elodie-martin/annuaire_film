@@ -4,8 +4,8 @@
 		$requete = explode("/", trim($_SERVER['REQUEST_URI'], "/"));
 
 		$controller = (count($requete) === 1)? "home":$requete[1];
-		$action = (count($requete) < 3)? "liste": $requete[2];
-		$id = (count($requete) < 4)? 0 : intval($requete[3]);
+		// $action = (count($requete) < 3)? "liste": $requete[2];
+		// $id = (count($requete) < 4)? 0 : intval($requete[3]);
 
 		switch ($controller) {
 			case 'owners':
