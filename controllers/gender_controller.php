@@ -12,7 +12,6 @@ function renderFilmsByGender($genderId) {
 	echo $twig->render('gender_view.twig', array('film' => $filmsByGender));
 }
 
-
 if (isset($_SERVER["REQUEST_URI"])) {
 	// $action = (count($requete) < 3)? "liste": $requete[2];
 	// echo $_SERVER["REQUEST_URI"];

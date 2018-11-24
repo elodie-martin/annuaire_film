@@ -24,7 +24,7 @@ function renderFilm($Id) {
 	// print_r($gender); // DEBUG HERE
 	echo $twig->render('film_view.twig', array('film' => $film, 'gender' => $gender));
 }
-
+ 
 switch ($action) {
 	case 'gender':
 		require_once('gender_controller.php');

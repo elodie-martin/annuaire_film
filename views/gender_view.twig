@@ -13,10 +13,10 @@
 		<ul>
 			<li>Date de sortie : <a href="">{{ elem.Sortie }}</a></li>
 			<li>Auteur : <a href="">{{ elem.Prenom }} {{ elem.Nom }}</a></li>
-			<li>Genre: 
-				{% for elem in gender %}
-					<a href="annuaire_film/film/gender/{{ elem.ID }}">{{ elem.Themes }}</a>
-				{% endfor %} 
+			<li>Genre:
+		
+					<a href="{{ elem.ID }}">{{ elem.Themes }}</a>
+			
 			</li>
 		</ul>
 

@@ -28,7 +28,7 @@ function getFilmsByGender($genderId) {
 	global $bdd;
 
 	// Va chercher tout les films qui ont le genre ID suivant...
-	$sql = "SELECT Film.Titre,Film.Sortie,Film.Description,Realisateur.Nom,Realisateur.Prenom,Genre.Themes 
+	$sql = "SELECT Film.ID, Film.Titre,Film.Sortie,Film.Description,Realisateur.Nom,Realisateur.Prenom,Genre.Themes, Genre.ID 
 			FROM Film 
 			INNER JOIN Liaison_ID_Genre_Film on Liaison_ID_Genre_Film.ID_Film = Film.ID
 			INNER JOIN Genre on Genre.ID = Liaison_ID_Genre_Film.ID_Genre 

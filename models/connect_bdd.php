@@ -1,6 +1,6 @@
 <?php 
 
-    // Fichier pour se connecter à la base de donnée.
+    // Fichier pour se connecter à la base de donnée.d
 
 	$username = 'root';
 	$password = 'online@2017';
