@@ -1,0 +1,11 @@
+{% extends "home_view.twig" %}
+
+{% block owners %}
+   
+  {% for array in auteurs %}
+          
+                <li> <a href="auteur/{{ array.ID }}"> {{ array.Titre }} </a> </li>
+        
+        {% endfor %}
+   
+{% endblock %}
