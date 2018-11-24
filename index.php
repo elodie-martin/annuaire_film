@@ -4,8 +4,8 @@
 		$requete = explode("/", trim($_SERVER['REQUEST_URI'], "/"));
 
 		$controller = (count($requete) === 1)? "home":$requete[1];
-		// $action = (count($requete) < 3)? "liste": $requete[2];
-		// $id = (count($requete) < 4)? 0 : intval($requete[3]);
+		$action = (count($requete) < 3)? "liste": $requete[2];
+		$id = (count($requete) < 4)? 0 : intval($requete[3]);
 
 		switch ($controller) {
 			case 'owners':
@@ -16,7 +16,10 @@
 				break;
 			case 'film':
 				require_once("controllers/film_controller.php");
-				break;	
+				break;
+			case 'gender':
+				require_once("controllers/gender_controller.php");
+				break;		
 			default:
 				require_once("controllers/home_controller.php");
 				break;

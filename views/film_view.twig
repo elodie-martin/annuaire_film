@@ -10,7 +10,11 @@
 		<ul>
 			<li>Date de sortie : <a href="">{{ film.Sortie }}</a></li>
 			<li>Auteur : <a href="">{{ film.Prenom }} {{ film.Nom }}</a></li>
-			<li>Genre: <a href="">{{ film.Genres }}</a></li>
+			<li>Genre:
+				{% for elem in gender %}
+					<a href="gender/{{ elem.ID }}">{{ elem.Themes }}</a>
+				{% endfor %} 
+			</li>
 		</ul>
 
 		<p class="card-description">{{ film.Description }}</p>

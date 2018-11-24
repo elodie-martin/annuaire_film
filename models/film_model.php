@@ -8,7 +8,7 @@ function getFilm($idFilm) {
 	global $bdd;
 
 	// ICI METTRE LA REQUETE
-	$sql = "SELECT Film.Titre,Film.Sortie,Film.Description,Realisateur.Nom,Realisateur.Prenom, GROUP_CONCAT(Genre.Themes) AS Genres
+	$sql = "SELECT Film.Titre,Film.Sortie,Film.Description,Realisateur.Nom,Realisateur.Prenom
 			FROM Film 
 			INNER JOIN Liaison_ID_Genre_Film ON Liaison_ID_Genre_Film.ID_Film = Film.ID 
 			INNER JOIN Genre ON Genre.ID = Liaison_ID_Genre_Film.ID_Genre
@@ -22,7 +22,7 @@ function getFilm($idFilm) {
     $film = $response->fetchAll(PDO::FETCH_ASSOC);
 
     // Retourne le resultat de la requête
-    return $film;
+    return $film[0];
 
 }
 

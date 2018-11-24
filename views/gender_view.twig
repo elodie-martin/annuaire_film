@@ -1,0 +1,30 @@
+{% extends "home_view.twig" %}
+
+{% block gender %}
+
+<!-- // TOUT LES FILMS PAR LEURS GENRE -->
+
+{% for elem in film %}
+<!-- // Chaques films est affiché sous forme de carte qui défileront dans un carroussel  -->
+	<div class="card">
+
+		<h1 class="card-title">{{ elem.Titre }}</h1>
+
+		<ul>
+			<li>Date de sortie : <a href="">{{ elem.Sortie }}</a></li>
+			<li>Auteur : <a href="">{{ elem.Prenom }} {{ elem.Nom }}</a></li>
+			<li>Genre: 
+				{% for elem in gender %}
+					<a href="annuaire_film/film/gender/{{ elem.ID }}">{{ elem.Themes }}</a>
+				{% endfor %} 
+			</li>
+		</ul>
+
+		<p class="card-description">{{ elem.Description }}</p>
+		
+
+	</div>
+
+{% endfor %}
+
+{% endblock %}
