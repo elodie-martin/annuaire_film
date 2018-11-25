@@ -5,33 +5,31 @@ require_once('models/film_model.php');
 require_once('models/gender_model.php');
 
 if (isset($_SERVER["REQUEST_URI"])) {
-	// $action = (count($requete) < 3)? "liste": $requete[2];
-	// $id = (count($requete) < 4)? 0 : intval($requete[3]);
-	// echo $_SERVER["REQUEST_URI"];
-
 	$requete = explode("/", trim($_SERVER['REQUEST_URI'], "/"));
 	$action = (count($requete) < 3)? NULL: $requete[2];
-	echo $action;
+	$id = (count($requete) < 4)? 0 : intval($requete[3]);
 }
 
-function renderFilm($Id) {
+$numberOfFilms = count(getListOfAllFilms());
+
+// Permet d'afficher les infos du film via son ID 
+function showFilm($Id) {
 	$loader = new Twig_Loader_Filesystem('views');
 	$twig = new Twig_Environment($loader);
-	$film = getFilm($Id); // Fonction importé depuis film_model.php
-	// $genreId = explode(",",$film[0]["GenreId"]); 
+	$film = getFilmById($Id); // Fonction importé depuis film_model.php
 	$gender = getGenderIdOfFilm($Id); // Fonction importé depuis gender_model.php
-
 	// print_r($gender); // DEBUG HERE
 	echo $twig->render('film_view.twig', array('film' => $film, 'gender' => $gender));
 }
- 
+
+
+
 switch ($action) {
-	case 'gender':
-		require_once('gender_controller.php');
-		break;		
-	default:
-		# code... ouais.. encore...
-		renderFilm($action);
+	case 'show': // Si l'action est d'afficher le film cliquer (annuaire_film/film/show/)
+		showFilm($id); // Affiche le film ayant pour ID $id (annuaire_film/film//$id)
+		break;	
+	default: // Par défaut liste tout les films quand on est sur annuaire_film/film
+		require_once('home_controller.php');
 		break;
 }
 

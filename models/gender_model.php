@@ -3,6 +3,22 @@
 
 require_once("models/connect_bdd.php");
 
+// RETOURNE TOUT LES GENRES ET LEURS ID CORRESPONDANT DANS LA BDD
+function listGender() {
+
+	global $bdd;
+
+	$sql = "SELECT Genre.Themes AS genreTheme, Genre.ID AS genreId
+			FROM Genre";
+
+	$response = $bdd->prepare( $sql );
+    $response->execute();
+    $genders = $response->fetchAll(PDO::FETCH_ASSOC);
+
+    return $genders;
+
+}
+
 // RETOURNE LE(S) GENRE(S) ET LEURS ID EN FONCTION DE L'ID DU FILM
 function getGenderIdOfFilm($filmId) { 
 
@@ -28,7 +44,7 @@ function getFilmsByGender($genderId) {
 	global $bdd;
 
 	// Va chercher tout les films qui ont le genre ID suivant...
-	$sql = "SELECT Film.ID, Film.Titre,Film.Sortie,Film.Description,Realisateur.Nom,Realisateur.Prenom,Genre.Themes, Genre.ID 
+	$sql = "SELECT Film.ID, Film.Titre,Film.Sortie,Film.Description,Realisateur.Nom,Realisateur.Prenom,Genre.Themes, Genre.ID as genreId
 			FROM Film 
 			INNER JOIN Liaison_ID_Genre_Film on Liaison_ID_Genre_Film.ID_Film = Film.ID
 			INNER JOIN Genre on Genre.ID = Liaison_ID_Genre_Film.ID_Genre 

@@ -46,16 +46,14 @@
     </header> <!-- FIN HEADER -->
     <main class="container-fluid">
         
-        
+        <!-- // home controller -->
         {% for array in films %}
           
-                <li> <a href="film/{{ array.ID }}"> {{ array.Titre }} </a> </li>
+                <li> <a href="film/show/{{ array.ID }}"> {{ array.Titre }} </a> </li>
         
         {% endfor %}
         
 
-        {% block owners %}{% endblock %}
-        {% block years %}{% endblock %}
         {% block film %}{% endblock %}
         {% block gender %}{% endblock %}
         

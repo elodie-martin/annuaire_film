@@ -1,8 +1,9 @@
-{% extends "home_view.twig" %}
+{% extends "layout.twig" %}
 
 {% block gender %}
 
 <!-- // TOUT LES FILMS PAR LEURS GENRE -->
+
 
 {% for elem in film %}
 <!-- // Chaques films est affiché sous forme de carte qui défileront dans un carroussel  -->
@@ -15,7 +16,7 @@
 			<li>Auteur : <a href="">{{ elem.Prenom }} {{ elem.Nom }}</a></li>
 			<li>Genre:
 		
-					<a href="{{ elem.ID }}">{{ elem.Themes }}</a>
+					<a href="/annuaire_film/gender/list/{{ elem.genreId }}">{{ elem.Themes }}</a>
 			
 			</li>
 		</ul>

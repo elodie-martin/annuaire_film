@@ -12,7 +12,7 @@
 			<li>Auteur : <a href="">{{ film.Prenom }} {{ film.Nom }}</a></li>
 			<li>Genre:
 				{% for elem in gender %}
-					<a href="gender/{{ elem.ID }}">{{ elem.Themes }}</a>
+					<a href="/annuaire_film/gender/list/{{ elem.ID }}">{{ elem.Themes }}</a>
 				{% endfor %} 
 			</li>
 		</ul>
