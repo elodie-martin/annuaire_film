@@ -8,7 +8,9 @@ function getFilmById($idFilm) {
 	global $bdd;
 
 	// ICI METTRE LA REQUETE
-	$sql = "SELECT Film.Titre,Film.Sortie,Film.Description,Realisateur.Nom,Realisateur.Prenom
+	$sql = "SELECT Film.Titre,Film.Sortie,Film.Description,Realisateur.Nom,Realisateur.Prenom, 
+			GROUP_CONCAT(Genre.ID) AS genreId,
+			GROUP_CONCAT(Genre.Themes) AS genreTheme
 			FROM Film 
 			INNER JOIN Liaison_ID_Genre_Film ON Liaison_ID_Genre_Film.ID_Film = Film.ID 
 			INNER JOIN Genre ON Genre.ID = Liaison_ID_Genre_Film.ID_Genre
@@ -26,6 +28,8 @@ function getFilmById($idFilm) {
 
 }
 
+
+// Donne toute la liste des films (nom, ID) (pour home_controller.php)
 function getListOfAllFilms() {
 
 	// Accéder à la variable $bdd du fichier connect_bdd.php
@@ -41,5 +45,7 @@ function getListOfAllFilms() {
     return $list;
 
 }
+
+
 
 ?>

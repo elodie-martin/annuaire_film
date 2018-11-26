@@ -27,15 +27,15 @@ function getGenderIdOfFilm($filmId) {
 	$sql = "SELECT Genre.Themes, Genre.ID
 			FROM Film 
 			INNER JOIN Liaison_ID_Genre_Film on Liaison_ID_Genre_Film.ID_Film = Film.ID 
-			INNER JOIN Genre on Genre.ID = Liaison_ID_Genre_Film.ID_Genre 
+			INNER JOIN Genre ON Genre.ID = Liaison_ID_Genre_Film.ID_Genre 
 			WHERE Film.ID = :filmId";
 
 	$response = $bdd->prepare( $sql );
 	$response->bindParam(':filmId', $filmId, PDO::PARAM_STR);
     $response->execute();
-    $gender = $response->fetchAll(PDO::FETCH_ASSOC);
+    $genderForFilm = $response->fetchAll(PDO::FETCH_ASSOC);
 
-    return $gender;
+    return $genderForFilm;
 }
 
 // RETOURNE TOUT LES FILMS QUI ONT LE GENRE ID PASSER EN PARAMETRE
@@ -44,12 +44,12 @@ function getFilmsByGender($genderId) {
 	global $bdd;
 
 	// Va chercher tout les films qui ont le genre ID suivant...
-	$sql = "SELECT Film.ID, Film.Titre,Film.Sortie,Film.Description,Realisateur.Nom,Realisateur.Prenom,Genre.Themes, Genre.ID as genreId
+	$sql = "SELECT Film.ID, Film.Titre,Film.Sortie,Film.Description,Realisateur.Nom,Realisateur.Prenom,Genre.Themes, Genre.ID AS genreId
 			FROM Film 
-			INNER JOIN Liaison_ID_Genre_Film on Liaison_ID_Genre_Film.ID_Film = Film.ID
-			INNER JOIN Genre on Genre.ID = Liaison_ID_Genre_Film.ID_Genre 
-			INNER JOIN Table_Liaison_ID_Film_Realisateur on Table_Liaison_ID_Film_Realisateur.ID_Film = Film.ID 
-			INNER JOIN Realisateur on Realisateur.ID = Table_Liaison_ID_Film_Realisateur.ID_Realisateur
+			INNER JOIN Liaison_ID_Genre_Film ON Liaison_ID_Genre_Film.ID_Film = Film.ID
+			INNER JOIN Genre ON Genre.ID = Liaison_ID_Genre_Film.ID_Genre 
+			INNER JOIN Table_Liaison_ID_Film_Realisateur ON Table_Liaison_ID_Film_Realisateur.ID_Film = Film.ID 
+			INNER JOIN Realisateur ON Realisateur.ID = Table_Liaison_ID_Film_Realisateur.ID_Realisateur
 			WHERE Genre.ID = :genderId";
 
 	$response = $bdd->prepare( $sql );

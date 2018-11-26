@@ -1,4 +1,4 @@
-{% extends "layout.twig" %}
+{% extends "home_view.twig" %}
 
 {% block gender %}
 
@@ -14,9 +14,17 @@
 		<ul>
 			<li>Date de sortie : <a href="">{{ elem.Sortie }}</a></li>
 			<li>Auteur : <a href="">{{ elem.Prenom }} {{ elem.Nom }}</a></li>
-			<li>Genre:
-		
-					<a href="/annuaire_film/gender/list/{{ elem.genreId }}">{{ elem.Themes }}</a>
+			<li>Genre: {{ elem }}
+				
+					{% set foo = elem.genreId|split(',') %}
+					{% set foo2 = elem.Theme|split(',') %}
+					{% for id in foo %}		
+						<a href="/annuaire_film/gender/list/{{ id }}">{{ foo2[loop.index] }}</a>
+					{% endfor %}	
+			}
+			}
+			}
+
 			
 			</li>
 		</ul>

@@ -9,13 +9,16 @@ if (isset($_SERVER["REQUEST_URI"])) {
 	$id = (count($requete) < 4)? 0 : intval($requete[3]);
 }
 
-// Liste tout les films
+
+// Affiche le block twig contenant la liste de tout les films.
 function renderListOfAllFilms() {
 	$loader = new Twig_Loader_Filesystem('views');
 	$twig = new Twig_Environment($loader);
 	$films = getListOfAllFilms();
+
 	echo $twig->render('home_view.twig', array('films' => $films));;	
 }
+
 
 renderListOfAllFilms();
 
