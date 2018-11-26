@@ -5,19 +5,19 @@
 	<!-- // Chaques films est affiché sous forme de carte qui défileront dans un carroussel  -->
 	<div class="card">
 
-		<h1 class="card-title">{{ film.Titre }}</h1>
+		<h1 class="card-title">{{ film.title }}</h1>
 
 		<ul>
-			<li>Date de sortie : <a href="">{{ film.Sortie }}</a></li>
-			<li>Auteur : <a href="">{{ film.Prenom }} {{ film.Nom }}</a></li>
+			<li>Date de sortie : <a href="">{{ film.releaseDate }}</a></li>
+			<li>Auteur : <a href="">{{ film.name }} {{ film.lastname }}</a></li>
 			<li>Genre:
 				{% for elem in gender %}
-					<a href="/annuaire_film/gender/list/{{ elem.ID }}">{{ elem.Themes }}</a>
+					<a href="/annuaire_film/gender/list/{{ elem.id }}">{{ elem.name }}</a>
 				{% endfor %} 
 			</li>
 		</ul>
 
-		<p class="card-description">{{ film.Description }}</p>
+		<p class="card-description">{{ film.description }}</p>
 		
 
 	</div>

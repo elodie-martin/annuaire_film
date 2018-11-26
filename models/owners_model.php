@@ -8,10 +8,10 @@ function getOwners() {
 	global $bdd;
 
 	// ICI METTRE LA REQUETE
-	$sql = "SELECT Film.Titre,Realisateur.Nom,Realisateur.Prenom FROM Film 
-	INNER JOIN Table_Liaison_ID_Film_Realisateur on Table_Liaison_ID_Film_Realisateur.ID_Film = Film.ID 
-	INNER JOIN Realisateur on Realisateur.ID = Table_Liaison_ID_Film_Realisateur.ID_Realisateur 
-	ORDER BY Nom";
+	$sql = "SELECT movie.title, director.lastname,director.name FROM movie 
+	INNER JOIN id_movie_director on id_movie_director.id_movie = movie.id 
+	INNER JOIN director on director.id = id_movie_director.id_director 
+	ORDER BY lastname";
 	$response = $bdd->prepare( $sql );
     $response->execute();
     $owners = $response->fetchAll(PDO::FETCH_ASSOC);
