@@ -12,18 +12,21 @@
 		<h1 class="card-title">{{ elem.title }}</h1>
 
 		<ul>
-			<li>Date de sortie : <a href="">{{ elem.releaseDate }}</a></li>
-			<li>Auteur : <a href="">{{ elem.name }} {{ elem.lastname }}</a></li>
-			<li>Genre:
+			<li>Date de sortie : <a href="">{{ elem.Sortie }}</a></li>
+			<li>Auteur : <a href="">{{ elem.Prenom }} {{ elem.Nom }}</a></li>
+			<li>Genre: {{ elem }}
+				
+					{% set foo = elem.genreId|split(',') %}
+					{% set foo2 = elem.Theme|split(',') %}
+					{% for id in foo %}		
+						<a href="/annuaire_film/gender/list/{{ id }}">{{ foo2[loop.index] }}</a>
+					{% endfor %}	
 		
-					<a href="/annuaire_film/gender/list/{{ elem.genreId }}">{{ elem.name }}</a>
-			
 			</li>
 		</ul>
 
 		<p class="card-description">{{ elem.description }}</p>
 		
-
 	</div>
 
 {% endfor %}

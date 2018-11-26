@@ -11,9 +11,14 @@
 			<li>Date de sortie : <a href="">{{ film.releaseDate }}</a></li>
 			<li>Auteur : <a href="">{{ film.name }} {{ film.lastname }}</a></li>
 			<li>Genre:
-				{% for elem in gender %}
-					<a href="/annuaire_film/gender/list/{{ elem.id }}">{{ elem.name }}</a>
-				{% endfor %} 
+
+					{% set foo = film.genreId|split(',') %}
+					{% set foo2 = film.genreTheme|split(',') %}
+					{% for id in foo %}		
+						<a href="/annuaire_film/gender/list/{{ id }}">{{ foo2[loop.index] }}</a>
+					{% endfor %}	
+
+
 			</li>
 		</ul>
 

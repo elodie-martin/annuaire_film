@@ -8,6 +8,7 @@ function getFilmById($idFilm) {
 	global $bdd;
 
 	// ICI METTRE LA REQUETE
+
 	$sql = "SELECT movie.title, movie.releaseDate, movie.description, director.lastname, director.name
 			FROM movie 
 			INNER JOIN id_movie_genre ON id_movie_genre.id_movie = movie.id 
@@ -15,6 +16,7 @@ function getFilmById($idFilm) {
 			INNER JOIN id_movie_director ON id_movie_director.id_movie = movie.id 
 			INNER JOIN director ON director.id = id_movie_director.id_director
 			WHERE movie.id = :idFilm";
+
 
 	$response = $bdd->prepare( $sql );
 	$response->bindParam(':idFilm', $idFilm, PDO::PARAM_STR);
@@ -26,6 +28,8 @@ function getFilmById($idFilm) {
 
 }
 
+
+// Donne toute la liste des films (nom, ID) (pour home_controller.php)
 function getListOfAllFilms() {
 
 	// Accéder à la variable $bdd du fichier connect_bdd.php
@@ -41,5 +45,7 @@ function getListOfAllFilms() {
     return $list;
 
 }
+
+
 
 ?>

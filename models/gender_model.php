@@ -30,12 +30,13 @@ function getGenderIdOfFilm($filmId) {
 			INNER JOIN genre on genre.id = id_movie_genre.id_genre 
 			WHERE movie.id = :filmId";
 
+
 	$response = $bdd->prepare( $sql );
 	$response->bindParam(':filmId', $filmId, PDO::PARAM_STR);
     $response->execute();
-    $gender = $response->fetchAll(PDO::FETCH_ASSOC);
+    $genderForFilm = $response->fetchAll(PDO::FETCH_ASSOC);
 
-    return $gender;
+    return $genderForFilm;
 }
 
 // RETOURNE TOUT LES FILMS QUI ONT LE GENRE ID PASSER EN PARAMETRE

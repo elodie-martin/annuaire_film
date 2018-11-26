@@ -17,12 +17,10 @@ function showFilm($Id) {
 	$loader = new Twig_Loader_Filesystem('views');
 	$twig = new Twig_Environment($loader);
 	$film = getFilmById($Id); // Fonction importé depuis film_model.php
-	$gender = getGenderIdOfFilm($Id); // Fonction importé depuis gender_model.php
-	// print_r($gender); // DEBUG HERE
-	echo $twig->render('film_view.twig', array('film' => $film, 'gender' => $gender));
+	
+	print_r($film); // DEBUG HERE
+	echo $twig->render('film_view.twig', array('film' => $film));
 }
-
-
 
 switch ($action) {
 	case 'show': // Si l'action est d'afficher le film cliquer (annuaire_film/film/show/)

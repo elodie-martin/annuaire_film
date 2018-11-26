@@ -23,7 +23,7 @@ switch ($action) {
 		renderFilmsByGender($id);
 		break;
 	default:
-		require_once("controllers/error_controller.php");
+		require_once("controllers/404.php");
 		break;
 }
 
