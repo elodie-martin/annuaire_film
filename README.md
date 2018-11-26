@@ -68,31 +68,13 @@ Bon courage, Access Code School
 # Made by : Lucas, Antonin, Elodie, Killian
 
 
-SELECT 
-Film.Titre,
-SUBSTRING_INDEX(GROUP_CONCAT(Genre.Themes), ",", 1) AS Theme1,
-SUBSTRING_INDEX(GROUP_CONCAT(Genre.Themes), ",", -1) AS Theme2,
-SUBSTRING_INDEX(GROUP_CONCAT(Genre.ID), ",", 1) AS genreId1,
-SUBSTRING_INDEX(GROUP_CONCAT(Genre.ID), ",", -1) AS genreId2
 
+// GOOD REQUEST 
+
+SELECT Titre, 
+(SELECT GROUP_CONCAT(DISTINCT g.Themes SEPARATOR ",") FROM Genre g 
+INNER JOIN Liaison_ID_Genre_Film gf ON g.ID = gf.ID_Genre 
+Where gf.ID_Film = Film.id)
 FROM Film 
-INNER JOIN Liaison_ID_Genre_Film ON Liaison_ID_Genre_Film.ID_Film = Film.ID 
-INNER JOIN Genre ON Genre.ID = Liaison_ID_Genre_Film.ID_Genre 
-WHERE Film.ID = "11"
-
-
-
-
-SELECT 
-Film.Titre,
-SUBSTRING_INDEX(GROUP_CONCAT(Genre.Themes), ",", 1) AS Theme1,
-SUBSTRING_INDEX(GROUP_CONCAT(Genre.Themes), ",", -1) AS Theme2,
-SUBSTRING_INDEX(GROUP_CONCAT(Genre.Themes), ",", 0) AS Theme3,
-GROUP_CONCAT(Genre.Themes),
-SUBSTRING_INDEX(GROUP_CONCAT(Genre.ID), ",", 1) AS genreId1,
-SUBSTRING_INDEX(GROUP_CONCAT(Genre.ID), ",", -1) AS genreId2
-
-FROM Film 
-INNER JOIN Liaison_ID_Genre_Film on Liaison_ID_Genre_Film.ID_Film = Film.ID 
-INNER JOIN Genre on Genre.ID = Liaison_ID_Genre_Film.ID_Genre 
-WHERE Film.ID = "10"
+INNER JOIN Liaison_ID_Genre_Film gf ON gf.ID_Film = Film.id
+INNER JOIN Genre g ON g.ID = gf.ID_Genre WHERE gf.ID_Genre = 3 GROUP BY Film.id;
