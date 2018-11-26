@@ -10,6 +10,6 @@ $auteurs = getOwners();
 
 // print_r($auteurs);
 
-echo $twig->render('home_view.twig', array('auteurs' => $auteurs));
+echo $twig->render('owners_view.twig', array('auteurs' => $auteurs));
 
 ?>
