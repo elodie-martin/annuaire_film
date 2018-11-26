@@ -9,7 +9,7 @@
 <!-- // Chaques films est affiché sous forme de carte qui défileront dans un carroussel  -->
 	<div class="card">
 
-		<h1 class="card-title">{{ elem.Titre }}</h1>
+		<h1 class="card-title">{{ elem.title }}</h1>
 
 		<ul>
 			<li>Date de sortie : <a href="">{{ elem.Sortie }}</a></li>
@@ -21,17 +21,12 @@
 					{% for id in foo %}		
 						<a href="/annuaire_film/gender/list/{{ id }}">{{ foo2[loop.index] }}</a>
 					{% endfor %}	
-			}
-			}
-			}
-
-			
+		
 			</li>
 		</ul>
 
-		<p class="card-description">{{ elem.Description }}</p>
+		<p class="card-description">{{ elem.description }}</p>
 		
-
 	</div>
 
 {% endfor %}
