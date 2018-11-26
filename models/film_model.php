@@ -22,7 +22,7 @@ function getFilm($idFilm) {
     $film = $response->fetchAll(PDO::FETCH_ASSOC);
 
     // Retourne le resultat de la requête
-    return $film[0];
+	return $film[0];
 
 }
 

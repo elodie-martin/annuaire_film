@@ -3,6 +3,28 @@
 {% block years %}
    
 
+{% for elem in film %}
+<!-- // Chaques films est affiché sous forme de carte qui défileront dans un carroussel  -->
+	<div class="card">
+
+		<h1 class="card-title">{{ elem.Titre }}</h1>
+
+		<ul>
+			<li>Date de sortie : <a href="{{ elem.Sortie }}">{{ elem.Sortie }}</a></li>
+			<li>Auteur : <a href="">{{ elem.Prenom }} {{ elem.Nom }}</a></li>
+			<li>Genre:
+		
+					<a href="../gender/{{ elem.ID }}">{{ elem.Themes }}</a>
+			
+			</li>
+		</ul>
+
+		<p class="card-description">{{ elem.Description }}</p>
+		
+
+	</div>
+
+{% endfor %}
 
 
    

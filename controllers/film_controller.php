@@ -28,6 +28,9 @@ function renderFilm($Id) {
 switch ($action) {
 	case 'gender':
 		require_once('gender_controller.php');
+		break;
+	case 'years':
+		require_once('years_controller.php');
 		break;		
 	default:
 		# code... ouais.. encore...
