@@ -12,8 +12,8 @@
 			<li>Auteur : <a href="">{{ film.name }} {{ film.lastname }}</a></li>
 			<li>Genre:
 
-					{% set foo = film.genreId|split(',') %}
-					{% set foo2 = film.genreTheme|split(',') %}
+					{% set foo = film.gid|split(',') %}
+					{% set foo2 = film.gname|split(',') %}
 					{% for id in foo %}		
 						<a href="/annuaire_film/gender/list/{{ id }}">{{ foo2[loop.index] }}</a>
 					{% endfor %}	

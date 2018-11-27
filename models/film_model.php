@@ -9,14 +9,19 @@ function getFilmById($idFilm) {
 
 	// ICI METTRE LA REQUETE
 
-	$sql = "SELECT movie.title, movie.releaseDate, movie.description, director.lastname, director.name
-			FROM movie 
-			INNER JOIN id_movie_genre ON id_movie_genre.id_movie = movie.id 
-			INNER JOIN genre ON genre.id = id_movie_genre.id_genre
-			INNER JOIN id_movie_director ON id_movie_director.id_movie = movie.id 
-			INNER JOIN director ON director.id = id_movie_director.id_director
+	$sql = "SELECT 
+			movie.title,
+			movie.releaseDate,
+			movie.description,
+			director.lastname,
+			director.name,
+		 	GROUP_CONCAT(genre.name) AS gname,
+		 	GROUP_CONCAT(genre.id) AS gid FROM movie
+			JOIN id_movie_genre ON id_movie_genre.id_movie = movie.id
+			JOIN genre ON genre.id = id_movie_genre.id_genre
+			JOIN id_movie_director ON id_movie_director.id_movie = movie.id
+			JOIN director ON director.id = id_movie_director.id_director
 			WHERE movie.id = :idFilm";
-
 
 	$response = $bdd->prepare( $sql );
 	$response->bindParam(':idFilm', $idFilm, PDO::PARAM_STR);

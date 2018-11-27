@@ -45,13 +45,12 @@ function getFilmsByGender($genderId) {
 	global $bdd;
 
 	// Va chercher tout les films qui ont le genre ID suivant...
-	$sql = "SELECT movie.id, movie.title, movie.releaseDate, movie.description, director.lastname, director.name, genre.name, genre.id
-			FROM movie 
-			INNER JOIN id_movie_genre on id_movie_genre.id_movie = movie.id
-			INNER JOIN genre on genre.id = id_movie_genre.id_genre 
-			INNER JOIN id_movie_director on id_movie_director.id_movie = movie.id 
-			INNER JOIN director on director.id = id_movie_director.id_director
-			WHERE genre.id = :genderId";
+	$sql = "SELECT Titre, (SELECT GROUP_CONCAT(DISTINCT g.Themes SEPARATOR ',') FROM Genre g 
+			INNER JOIN Liaison_ID_Genre_Film gf ON g.ID = gf.ID_Genre 
+			WHERE gf.ID_Film = Film.id)
+			FROM Film 
+			INNER JOIN Liaison_ID_Genre_Film gf ON gf.ID_Film = Film.id
+			INNER JOIN Genre g ON g.ID = gf.ID_Genre WHERE gf.ID_Genre = :genderId GROUP BY Film.id;";
 
 	$response = $bdd->prepare( $sql );
 	$response->bindParam(':genderId', $genderId, PDO::PARAM_STR);
