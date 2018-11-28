@@ -25,14 +25,29 @@ function getFilmsByYears($years) {
 	global $bdd;
 
 	// Va chercher tout les films qui ont l'annee suivante...
-	$sql = "SELECT movie.id, movie.title,movie.releaseDate,movie.description,director.lastname,director.name AS prenom, genre.name, GROUP_CONCAT(genre.id) 
-			FROM movie
-			INNER JOIN id_movie_genre on id_movie_genre.id_movie = movie.id
-			INNER JOIN genre on genre.id = id_movie_genre.id_genre
-			INNER JOIN id_movie_director on id_movie_director.id_movie = movie.id
-			INNER JOIN director on director.id = id_movie_director.id_director
-			WHERE movie.releaseDate = :years
-			GROUP BY (movie.id)";
+	
+	$sql = "SELECT title,
+			movie.title,
+			movie.releaseDate,
+			movie.description,
+			director.lastname,
+			director.name,
+
+			(SELECT GROUP_CONCAT(DISTINCT g.name SEPARATOR ',')
+			 FROM genre g JOIN id_movie_genre gf ON g.id = gf.id_genre
+			 WHERE gf.id_movie = movie.id) AS genres,
+			 
+			(SELECT GROUP_CONCAT(DISTINCT g.id SEPARATOR ',')
+			 FROM genre g JOIN id_movie_genre gf ON g.id = gf.id_genre
+			 WHERE gf.id_movie = movie.id) AS genresId
+			  
+			FROM movie 
+
+			JOIN id_movie_director ON id_movie_director.id_movie = movie.id
+			JOIN director ON  director.id = id_movie_director.id_director
+			JOIN id_movie_genre gf ON gf.id_movie = movie.id
+			JOIN genre g ON g.id = gf.id_genre WHERE movie.releaseDate = :years GROUP BY movie.id";
+
 
 	$response = $bdd->prepare( $sql );
 	$response->bindParam(':years', $years, PDO::PARAM_STR);
