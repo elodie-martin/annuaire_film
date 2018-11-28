@@ -5,27 +5,24 @@
 	<!-- // Chaques films est affiché sous forme de carte qui défileront dans un carroussel  -->
 	<div class="card">
 
-		<h1 class="card-title">{{ film.Titre }}</h1>
+		<h1 class="card-title">{{ film.title }}</h1>
 
 		<ul>
-			<li>Date de sortie :
-<<<<<<< HEAD
-				<a href="/annuaire_film/years/list/{{ film.Sortie }}">{{ film.Sortie }}</a></li>
-=======
-				<a href="years/{{ film.Sortie }}">{{ film.Sortie }}</a></li>
->>>>>>> 2c1cbb949c5cb87ed5ceac350620024f23c0f4f6
-			<li>Auteur : <a href="">{{ film.Prenom }} {{ film.Nom }}</a></li>
+			<li>Date de sortie : <a href="/annuaire_film/years/list/{{ film.releaseDate }}">{{ film.releaseDate }}</a></li>
+			<li>Auteur : <a href="">{{ film.name }} {{ film.lastname }}</a></li>
 			<li>Genre:
-					{% set foo = film.genreId|split(',') %}
-					{% set foo2 = film.genreTheme|split(',') %}
+
+					{% set foo = film.gid|split(',') %}
+					{% set foo2 = film.gname|split(',') %}
 					{% for id in foo %}		
-						<a href="/annuaire_film/gender/list/{{ id }}">{{ foo2[loop.index] }}</a>
+						<a href="/annuaire_film/gender/list/{{ id }}">{{ foo2[loop.index0] }}</a>
 					{% endfor %}	
+
 
 			</li>
 		</ul>
 
-		<p class="card-description">{{ film.Description }}</p>
+		<p class="card-description">{{ film.description }}</p>
 		
 
 	</div>

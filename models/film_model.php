@@ -8,15 +8,21 @@ function getFilmById($idFilm) {
 	global $bdd;
 
 	// ICI METTRE LA REQUETE
-	$sql = "SELECT Film.Titre,Film.Sortie,Film.Description,Realisateur.Nom,Realisateur.Prenom, 
-			GROUP_CONCAT(Genre.ID) AS genreId,
-			GROUP_CONCAT(Genre.Themes) AS genreTheme
-			FROM Film 
-			INNER JOIN Liaison_ID_Genre_Film ON Liaison_ID_Genre_Film.ID_Film = Film.ID 
-			INNER JOIN Genre ON Genre.ID = Liaison_ID_Genre_Film.ID_Genre
-			INNER JOIN Table_Liaison_ID_Film_Realisateur ON Table_Liaison_ID_Film_Realisateur.ID_Film = Film.ID 
-			INNER JOIN Realisateur ON Realisateur.ID = Table_Liaison_ID_Film_Realisateur.ID_Realisateur
-			WHERE Film.ID = :idFilm";
+
+	$sql = "SELECT 
+			movie.title,
+			movie.releaseDate,
+			movie.description,
+			director.lastname,
+			director.name,
+		 	GROUP_CONCAT(genre.name) AS gname,
+		 	GROUP_CONCAT(genre.id) AS gid
+		 	FROM movie
+			JOIN id_movie_genre ON id_movie_genre.id_movie = movie.id
+			JOIN genre ON genre.id = id_movie_genre.id_genre
+			JOIN id_movie_director ON id_movie_director.id_movie = movie.id
+			JOIN director ON director.id = id_movie_director.id_director
+			WHERE movie.id = :idFilm";
 
 	$response = $bdd->prepare( $sql );
 	$response->bindParam(':idFilm', $idFilm, PDO::PARAM_STR);
@@ -36,7 +42,7 @@ function getListOfAllFilms() {
 	global $bdd;
 
 	// ICI METTRE LA REQUETE
-	$sql = "SELECT ID,Titre FROM Film";
+	$sql = "SELECT id, title FROM movie";
 	$response = $bdd->prepare( $sql );
     $response->execute();
     $list = $response->fetchAll(PDO::FETCH_ASSOC);

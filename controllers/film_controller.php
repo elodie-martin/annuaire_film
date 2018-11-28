@@ -18,12 +18,16 @@ function showFilm($Id) {
 	$twig = new Twig_Environment($loader);
 	$film = getFilmById($Id); // Fonction importé depuis film_model.php
 	
-	print_r($film); // DEBUG HERE
+	// print_r($film); // DEBUG HERE
+	
 	echo $twig->render('film_view.twig', array('film' => $film));
 }
 
 switch ($action) {
 	case 'show': // Si l'action est d'afficher le film cliquer (annuaire_film/film/show/)
+		showFilm($id); // Affiche le film ayant pour ID $id (annuaire_film/film//$id)
+		break;
+	case 'genre': // Si l'action est d'afficher le film cliquer (annuaire_film/film/show/)
 		showFilm($id); // Affiche le film ayant pour ID $id (annuaire_film/film//$id)
 		break;	
 	case 'years': // Afficher les films de l'annee selectionnee
