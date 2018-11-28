@@ -16,7 +16,8 @@ function getFilmById($idFilm) {
 			director.lastname,
 			director.name,
 		 	GROUP_CONCAT(genre.name) AS gname,
-		 	GROUP_CONCAT(genre.id) AS gid FROM movie
+		 	GROUP_CONCAT(genre.id) AS gid
+		 	FROM movie
 			JOIN id_movie_genre ON id_movie_genre.id_movie = movie.id
 			JOIN genre ON genre.id = id_movie_genre.id_genre
 			JOIN id_movie_director ON id_movie_director.id_movie = movie.id

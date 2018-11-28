@@ -2,8 +2,8 @@
 	if (isset($_SERVER["REQUEST_URI"])) {
 
 		$requete = explode("/", trim($_SERVER['REQUEST_URI'], "/"));
-		print_r($requete);
-		echo count($requete);
+		// print_r($requete);
+		// echo count($requete);
 		$controller = (count($requete) === 1)? "home":$requete[1];
 		// $action = (count($requete) < 3)? "liste": $requete[2];
 		// $id = (count($requete) < 4)? 0 : intval($requete[3]);

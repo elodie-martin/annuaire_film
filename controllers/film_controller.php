@@ -18,7 +18,7 @@ function showFilm($Id) {
 	$twig = new Twig_Environment($loader);
 	$film = getFilmById($Id); // Fonction importé depuis film_model.php
 	
-	print_r($film); // DEBUG HERE
+	// print_r($film); // DEBUG HERE
 	
 	echo $twig->render('film_view.twig', array('film' => $film));
 }

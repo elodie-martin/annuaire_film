@@ -15,7 +15,7 @@
 					{% set foo = film.gid|split(',') %}
 					{% set foo2 = film.gname|split(',') %}
 					{% for id in foo %}		
-						<a href="/annuaire_film/gender/list/{{ id }}">{{ foo2[loop.index] }}</a>
+						<a href="/annuaire_film/gender/list/{{ id }}">{{ foo2[loop.index0] }}</a>
 					{% endfor %}	
 
 
