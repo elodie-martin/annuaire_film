@@ -12,7 +12,7 @@
 		<h1 class="card-title">{{ elem.title }}</h1>
 
 		<ul>
-			<li>Date de sortie : <a href="">{{ elem.releaseDate }}</a></li>
+			<li>Date de sortie : <a href="/annuaire_film/years/list/{{ elem.releaseDate }}">{{ elem.releaseDate }}</a></li>
 			<li>Auteur : <a href="">{{ elem.name }} {{ elem.lastname }}</a></li>
 			<li>Genre: 
 				
@@ -21,7 +21,6 @@
 					{% for id in foo %}		
 						<a href="/annuaire_film/gender/list/{{ id }}">{{ foo2[loop.index0] }}</a>
 					{% endfor %}	
-		
 			</li>
 		</ul>
 
