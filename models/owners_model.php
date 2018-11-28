@@ -2,7 +2,7 @@
 
 require_once("models/connect_bdd.php");
 
-function getOwners() {
+function getFilmsByOwners() {
 
 	// Accéder à la variable $bdd du fichier connect_bdd.php
 	global $bdd;

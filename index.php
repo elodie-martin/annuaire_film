@@ -17,7 +17,10 @@
 				break;
 			case 'gender':
 				require_once("controllers/gender_controller.php");
-				break;		
+				break;	
+			case 'owners':
+				require_once("controllers/owners_controller.php");
+				break;	
 			default:
 				require_once("controllers/404.php");
 				break;
