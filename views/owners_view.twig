@@ -13,7 +13,9 @@
 
 		<ul>
 			<li>Titre : <a href="/annuaire_film/film/show/{{ elem.mId }}">{{ elem.title }}</a></li>
+			
 			<li>Date de sortie : <a href="/annuaire_film/years/list/{{ elem.releaseDate }}">{{ elem.releaseDate }}</a></li>
+
 			<li>Genre:
 
 				{% set foo = elem.genresId|split(',') %}

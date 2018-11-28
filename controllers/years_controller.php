@@ -21,10 +21,18 @@ if (isset($_SERVER["REQUEST_URI"])) {
 	// $action = (count($requete) < 3)? "liste": $requete[2];
 	// echo $_SERVER["REQUEST_URI"];
 	$requete = explode("/", trim($_SERVER['REQUEST_URI'], "/"));
+	$action = (count($requete) < 3)? NULL: $requete[2];
 	$id = (count($requete) < 4)? 0 : intval($requete[3]);
-	// $action = (count($requete) < 3)? NULL: $requete[2];
 
-	renderFilmsByYears($id);
+}
+
+switch ($action) {
+	case 'list':
+		renderFilmsByYears($id);
+		break;
+	default:
+		require_once("controllers/404.php");
+		break;
 }
 
 ?>
