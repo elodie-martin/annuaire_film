@@ -15,6 +15,7 @@ function getFilmById($idFilm) {
 			movie.description,
 			director.lastname,
 			director.name,
+			director.id AS directorId,
 		 	GROUP_CONCAT(genre.name) AS gname,
 		 	GROUP_CONCAT(genre.id) AS gid
 		 	FROM movie

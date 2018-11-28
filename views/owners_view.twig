@@ -12,9 +12,9 @@
 		<h1 class="card-title">{{ elem.prenom }} {{ elem.lastname }}</h1>
 
 		<ul>
-			<li>Date de sortie : <a href="">{{ elem.releaseDate }}</a></li>
-			<li>Genre: <a href="/annuaire_film/owners/list/{{ elem.genreId }}">{{ elem.name }}</a>
-			
+			<li>Titre : <a href="">{{ elem.title }}</a></li>
+			<li>Date de sortie : <a href="/annuaire_film/years/list/">{{ elem.releaseDate }}</a></li>
+			<li>Genre: <a href="/annuaire_film/gender/list/{{ elem.genresId }}">{{ elem.genres }}</a>
 			</li>
 		</ul>
 

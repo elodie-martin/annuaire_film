@@ -20,7 +20,7 @@
 				break;	
 			case 'owners':
 				require_once("controllers/owners_controller.php");
-				break;	
+				break;
 			default:
 				require_once("controllers/404.php");
 				break;
