@@ -10,8 +10,8 @@
 		<h1 class="card-title">{{ elem.title }}</h1>
 
 		<ul>
-			<li>Date de sortie : <a href="{{ elem.releaseDate }}">{{ elem.releaseDate }}</a></li>
-			<li>Auteur : <a href="">{{ elem.prenom }} {{ elem.lastname }}</a></li>
+			<li>Date de sortie : <a href="/annuaire_film/years/list/{{ elem.releaseDate }}">{{ elem.releaseDate }}</a></li>
+			<li>Auteur : <a href="/annuaire_film/owners/list/{{ elem.id }}">{{ elem.prenom }} {{ elem.lastname }}</a></li>
 			<li>Genre:
 
 					{% set foo = elem.genresId|split(',') %}

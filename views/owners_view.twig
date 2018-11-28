@@ -14,10 +14,16 @@
 		<ul>
 			<li>Titre : <a href="">{{ elem.title }}</a></li>
 			<li>Date de sortie : <a href="/annuaire_film/years/list/">{{ elem.releaseDate }}</a></li>
-			<li>Genre: <a href="/annuaire_film/gender/list/{{ elem.genresId }}">{{ elem.genres }}</a>
+			<li>Genre:
+
+				{% set foo = elem.genresId|split(',') %}
+				{% set foo2 = elem.genres|split(',') %}
+				{% for id in foo %}		
+					<a href="/annuaire_film/gender/list/{{ id }}">{{ foo2[loop.index0] }}</a>
+				{% endfor %}	
 			</li>
 		</ul>
-
+		
 		<p class="card-description">{{ elem.description }}</p>
 		
 

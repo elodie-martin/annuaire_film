@@ -31,8 +31,8 @@ function getFilmsByYears($years) {
 			movie.releaseDate,
 			movie.description,
 			director.lastname,
-			director.name,
-
+			director.name AS prenom,
+			director.id,
 			(SELECT GROUP_CONCAT(DISTINCT g.name SEPARATOR ',')
 			 FROM genre g JOIN id_movie_genre gf ON g.id = gf.id_genre
 			 WHERE gf.id_movie = movie.id) AS genres,
