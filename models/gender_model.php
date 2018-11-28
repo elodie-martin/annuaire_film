@@ -4,12 +4,13 @@
 require_once("models/connect_bdd.php");
 
 // RETOURNE TOUT LES GENRES ET LEURS ID CORRESPONDANT DANS LA BDD
-function listGender() {
+function listGendersForNav() {
 
 	global $bdd;
 
 	$sql = "SELECT genre.name, genre.id
-			FROM Genre";
+			FROM genre
+			ORDER BY genre.name ASC";
 
 	$response = $bdd->prepare( $sql );
     $response->execute();
@@ -51,6 +52,7 @@ function getFilmsByGender($genderId) {
 			movie.description,
 			director.lastname,
 			director.name,
+			director.id,
 
 			(SELECT GROUP_CONCAT(DISTINCT g.name SEPARATOR ',')
 			 FROM genre g JOIN id_movie_genre gf ON g.id = gf.id_genre

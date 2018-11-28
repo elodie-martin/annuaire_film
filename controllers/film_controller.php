@@ -2,7 +2,10 @@
 
 require_once('vendor/autoload.php');
 require_once('models/film_model.php');
+require_once('models/owners_model.php');
 require_once('models/gender_model.php');
+require_once('models/years_model.php');
+
 
 if (isset($_SERVER["REQUEST_URI"])) {
 	$requete = explode("/", trim($_SERVER['REQUEST_URI'], "/"));
@@ -17,10 +20,12 @@ function showFilm($Id) {
 	$loader = new Twig_Loader_Filesystem('views');
 	$twig = new Twig_Environment($loader);
 	$film = getFilmById($Id); // Fonction importé depuis film_model.php
-	
+	$years = listYearsForNav();
+	$genders = listGendersForNav();
+	$owners = listOwnersForNav();
 	// print_r($film); // DEBUG HERE
 	
-	echo $twig->render('film_view.twig', array('film' => $film));
+	echo $twig->render('film_view.twig', array('film' => $film, 'years' => $years, 'genders' => $genders, 'owners' => $owners));
 }
 
 switch ($action) {

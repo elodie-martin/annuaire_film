@@ -2,12 +2,30 @@
 
 require_once("models/connect_bdd.php");
 
+
+function listOwnersForNav() {
+
+	global $bdd;
+
+	$sql = "SELECT director.name, director.lastname, director.id
+			FROM director
+			ORDER BY director.lastname ASC";
+
+	$response = $bdd->prepare( $sql );
+    $response->execute();
+    $owners = $response->fetchAll(PDO::FETCH_ASSOC);
+
+    return $owners;
+
+}
+
 function getFilmsByOwners($ownersId) {
 
 	// Accéder à la variable $bdd du fichier connect_bdd.php
 	global $bdd;
 
 	// ICI METTRE LA REQUETE
+
 	$sql = "SELECT movie.title, movie.id AS mId, movie.releaseDate, director.name AS prenom, director.lastname, director.id,
 
 	(SELECT GROUP_CONCAT(DISTINCT g.name SEPARATOR ',')

@@ -2,6 +2,24 @@
 
 require_once("models/connect_bdd.php");
 
+
+function listYearsForNav() {
+
+	global $bdd;
+
+	$sql = "SELECT movie.releaseDate
+			FROM movie
+			GROUP BY releaseDate
+			ORDER BY releaseDate DESC ";
+
+	$response = $bdd->prepare( $sql );
+    $response->execute();
+    $years = $response->fetchAll(PDO::FETCH_ASSOC);
+
+    return $years;
+
+}
+
 // RETOURNE LES FILMS EN FONCTION DE L'ANNEE
 function getYears($years) { 
 
