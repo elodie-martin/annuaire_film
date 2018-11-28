@@ -9,15 +9,15 @@
 <!-- // Chaques films est affiché sous forme de carte qui défileront dans un carroussel  -->
 	<div class="card">
 
-		<h1 class="card-title">{{ elem.Titre }}</h1>
+		<h1 class="card-title">{{ elem.title }}</h1>
 
 		<ul>
-			<li>Date de sortie : <a href="../years/{{ elem.Sortie }}">{{ elem.Sortie }}</a></li>
-			<li>Auteur : <a href="">{{ elem.Prenom }} {{ elem.Nom }}</a></li>
+			<li>Date de sortie : <a href="/annuaire_film/years/list/{{ elem.releaseDate }}">{{ elem.releaseDate }}</a></li>
+			<li>Auteur : <a href="">{{ elem.name }} {{ elem.lastname }}</a></li>
 			<li>Genre: {{ elem }}
 				
 					{% set foo = elem.genreId|split(',') %}
-					{% set foo2 = elem.Theme|split(',') %}
+					{% set foo2 = elem.name|split(',') %}
 					{% for id in foo %}		
 						<a href="/annuaire_film/gender/list/{{ id }}">{{ foo2[loop.index] }}</a>
 					{% endfor %}	
