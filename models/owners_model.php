@@ -8,7 +8,7 @@ function getFilmsByOwners($ownersId) {
 	global $bdd;
 
 	// ICI METTRE LA REQUETE
-	$sql = "SELECT movie.title,movie.releaseDate, director.name AS prenom, director.lastname, director.id,
+	$sql = "SELECT movie.title, movie.id AS mId, movie.releaseDate, director.name AS prenom, director.lastname, director.id,
 
 	(SELECT GROUP_CONCAT(DISTINCT g.name SEPARATOR ',')
 	FROM genre g JOIN id_movie_genre gf ON g.id = gf.id_genre
