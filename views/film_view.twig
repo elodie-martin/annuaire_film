@@ -9,7 +9,11 @@
 
 		<ul>
 			<li>Date de sortie :
+<<<<<<< HEAD
 				<a href="/annuaire_film/years/list/{{ film.Sortie }}">{{ film.Sortie }}</a></li>
+=======
+				<a href="years/{{ film.Sortie }}">{{ film.Sortie }}</a></li>
+>>>>>>> 2c1cbb949c5cb87ed5ceac350620024f23c0f4f6
 			<li>Auteur : <a href="">{{ film.Prenom }} {{ film.Nom }}</a></li>
 			<li>Genre:
 					{% set foo = film.genreId|split(',') %}
