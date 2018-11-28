@@ -1,9 +1,7 @@
 {% extends "home_view.twig" %}
 
-{% block gender %}
-
-<!-- // TOUT LES FILMS PAR LEURS GENRE -->
-
+{% block years %}
+   
 
 {% for elem in film %}
 <!-- // Chaques films est affiché sous forme de carte qui défileront dans un carroussel  -->
@@ -12,23 +10,27 @@
 		<h1 class="card-title">{{ elem.title }}</h1>
 
 		<ul>
+			<li>Date de sortie : <a href="{{ elem.releaseDate }}">{{ elem.releaseDate }}</a></li>
+			<li>Auteur : <a href="">{{ elem.prenom }} {{ elem.lastname }}</a></li>
+			<li>Genre:
 
-			<li>Date de sortie : <a href="/annuaire_film/years/list/{{ elem.releaseDate }}">{{ elem.releaseDate }}</a></li>
-			<li>Auteur : <a href="/annuaire_film/owners/list/{{ elem.id }}">{{ elem.name }} {{ elem.lastname }}</a></li>
-			<li>Genre: 
-				
 					{% set foo = elem.genresId|split(',') %}
 					{% set foo2 = elem.genres|split(',') %}
 					{% for id in foo %}		
 						<a href="/annuaire_film/gender/list/{{ id }}">{{ foo2[loop.index0] }}</a>
 					{% endfor %}	
+				
+			
 			</li>
 		</ul>
 
 		<p class="card-description">{{ elem.description }}</p>
 		
+
 	</div>
 
 {% endfor %}
 
+
+   
 {% endblock %}
