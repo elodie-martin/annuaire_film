@@ -17,6 +17,9 @@
 				break;
 			case 'gender':
 				require_once("controllers/gender_controller.php");
+				break;	
+			case 'owners':
+				require_once("controllers/owners_controller.php");
 				break;
 			case 'years':
 				require_once("controllers/years_controller.php");

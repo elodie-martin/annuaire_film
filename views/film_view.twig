@@ -9,7 +9,7 @@
 
 		<ul>
 			<li>Date de sortie : <a href="/annuaire_film/years/list/{{ film.releaseDate }}">{{ film.releaseDate }}</a></li>
-			<li>Auteur : <a href="">{{ film.name }} {{ film.lastname }}</a></li>
+			<li>Auteur : <a href="/annuaire_film/owners/list/{{ film.directorId }}">{{ film.name }} {{ film.lastname }}</a></li>
 			<li>Genre:
 
 					{% set foo = film.gid|split(',') %}

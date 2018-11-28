@@ -27,12 +27,6 @@ switch ($action) {
 	case 'show': // Si l'action est d'afficher le film cliquer (annuaire_film/film/show/)
 		showFilm($id); // Affiche le film ayant pour ID $id (annuaire_film/film//$id)
 		break;
-	case 'genre': // Si l'action est d'afficher le film cliquer (annuaire_film/film/show/)
-		showFilm($id); // Affiche le film ayant pour ID $id (annuaire_film/film//$id)
-		break;	
-	case 'years': // Afficher les films de l'annee selectionnee
-		require_once('years_controller.php');
-		break;	
 	default: // Par défaut liste tout les films quand on est sur annuaire_film/film
 		require_once('home_controller.php');
 		break;

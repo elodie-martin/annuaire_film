@@ -1,11 +1,28 @@
 {% extends "home_view.twig" %}
 
 {% block owners %}
-   
-  {% for array in auteurs %}
-          
-                <li> <a href="auteur/{{ array.id }}"> {{ array.name }}{{ array.lastname }} </a> </li>
-        
-        {% endfor %}
-   
+
+<!-- // TOUT LES FILMS PAR LEURS GENRE -->
+
+
+{% for elem in film %}
+<!-- // Chaques films est affiché sous forme de carte qui défileront dans un carroussel  -->
+	<div class="card">
+
+		<h1 class="card-title">{{ elem.prenom }} {{ elem.lastname }}</h1>
+
+		<ul>
+			<li>Titre : <a href="">{{ elem.title }}</a></li>
+			<li>Date de sortie : <a href="/annuaire_film/years/list/">{{ elem.releaseDate }}</a></li>
+			<li>Genre: <a href="/annuaire_film/gender/list/{{ elem.genresId }}">{{ elem.genres }}</a>
+			</li>
+		</ul>
+
+		<p class="card-description">{{ elem.description }}</p>
+		
+
+	</div>
+
+{% endfor %}
+
 {% endblock %}
