@@ -16,12 +16,11 @@ if (isset($_SERVER["REQUEST_URI"])) {
 function renderFilmsByOwners($ownersId) {
 	$loader = new Twig_Loader_Filesystem('views');
 	$twig = new Twig_Environment($loader);
-	$filmsByOwners = getFilmsByOwners($ownersId); // Fonction importé depuis owners_model.php
+	$filmsByOwners = getFilmsByOwners($ownersId); 
 	$years = listYearsForNav();
 	$genders = listGendersForNav();
 	$owners = listOwnersForNav();
-	// print_r($filmsByOwners); // DEBUG HERE
-
+	
 	echo $twig->render('owners_view.twig', array('film' => $filmsByOwners, 'years' => $years, 'genders' => $genders, 'owners' => $owners));
 }
 	
