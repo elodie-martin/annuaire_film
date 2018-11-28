@@ -1,8 +1,10 @@
 <?php 
 
 require_once('vendor/autoload.php');
+require_once('models/film_model.php');
+require_once('models/owners_model.php');
 require_once('models/gender_model.php');
-
+require_once('models/years_model.php');
 
 if (isset($_SERVER["REQUEST_URI"])) {
 	$requete = explode("/", trim($_SERVER['REQUEST_URI'], "/"));
@@ -15,7 +17,10 @@ function renderFilmsByGender($genderId) {
 	$twig = new Twig_Environment($loader);
 	$filmsByGender = getFilmsByGender($genderId); // Fonction importé depuis film_model.php
 	// print_r($filmsByGender); // DEBUG HERE
-	echo $twig->render('gender_view.twig', array('film' => $filmsByGender));
+	$years = listYearsForNav();
+	$genders = listGendersForNav();
+	$owners = listOwnersForNav();
+	echo $twig->render('gender_view.twig', array('film' => $filmsByGender, 'years' => $years, 'genders' => $genders, 'owners' => $owners));
 }
 	
 switch ($action) {

@@ -14,35 +14,36 @@
 <body>
     <header id="header" class="container-fluid">
         <h1><a href="/annuaire_film">MOOVIZ</a></h1>
-
-        <nav>
-            <ul>
-                <li>
-                    Par genre :
-                    <ul>
-                        {% for genre in genres %}
-                        <li> <a href=""> {{ genre }} </a> </li>
-                        {% endfor %}
-                    </ul>
-                </li>
-                <li>
-                    Par auteur :
-                    <ul>
-                        {% for auteur in auteurs %}
-                        <li> <a href=""> {{ auteur }} </a> </li>
-                        {% endfor %}
-                    </ul>
-                </li>
-                <li>
-                    Par année :
-                    <ul>
-                        {% for year in years %}
-                        <li> <a href=""> {{ year }} </a> </li>
-                        {% endfor %}
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+        {% block nav %}
+            <nav>
+                <ul>
+                    <li>
+                        Par genre :
+                        <ul>
+                            {% for gender in genders %}
+                            <a href="/annuaire_film/gender/list/{{ gender.id }}">  {{ gender.name }} </a>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    <li>
+                        Par auteur :
+                        <ul>
+                            {% for owner in owners %}
+                            <a href="/annuaire_film/owners/list/{{ owner.id }}">  {{ owner.name }} {{ owner.lastname}} </a>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    <li>
+                        Par année :
+                        <ul>
+                            {% for date in years %}
+                            <a href="/annuaire_film/years/list/{{ date.releaseDate }}">  {{ date.releaseDate }} </a>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+    {% endblock %}
     </header> <!-- FIN HEADER -->
     <main class="container-fluid">
         
@@ -64,6 +65,7 @@
 
     <footer class="container-fluid">
 
+        
     </footer> <!-- FIN FOOTER -->
 
 

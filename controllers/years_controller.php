@@ -1,6 +1,8 @@
 <?php 
 
 require_once('vendor/autoload.php');
+require_once('models/owners_model.php');
+require_once('models/gender_model.php');
 require_once('models/years_model.php');
 
 function renderFilmsByYears($years) {
@@ -9,7 +11,10 @@ function renderFilmsByYears($years) {
 	$filmsByYears = getFilmsByYears($years); // Fonction importé depuis film_model.php
 	// $gendeForEachFilms = getYearsOfFilm($filmsByYears.ID) 
 	//print_r($filmsByYears); // DEBUG HERE
-	echo $twig->render('years_view.twig', array('film' => $filmsByYears));
+	$years = listYearsForNav();
+	$genders = listGendersForNav();
+	$owners = listOwnersForNav();
+	echo $twig->render('years_view.twig', array('film' => $filmsByYears, 'years' => $years, 'genders' => $genders, 'owners' => $owners));
 }
 
 if (isset($_SERVER["REQUEST_URI"])) {

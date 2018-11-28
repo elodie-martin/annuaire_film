@@ -12,8 +12,8 @@
 		<h1 class="card-title">{{ elem.prenom }} {{ elem.lastname }}</h1>
 
 		<ul>
-			<li>Titre : <a href="">{{ elem.title }}</a></li>
-			<li>Date de sortie : <a href="/annuaire_film/years/list/">{{ elem.releaseDate }}</a></li>
+			<li>Titre : <a href="/annuaire_film/film/show/{{ elem.mId }}">{{ elem.title }}</a></li>
+			<li>Date de sortie : <a href="/annuaire_film/years/list/{{ elem.releaseDate }}">{{ elem.releaseDate }}</a></li>
 			<li>Genre:
 
 				{% set foo = elem.genresId|split(',') %}
@@ -31,4 +31,35 @@
 
 {% endfor %}
 
+{% endblock %}
+
+{% block nav %}
+<nav>
+    <ul>
+        <li>
+            Par genre :
+            <ul>
+                {% for gender in genders %}
+                <a href="/annuaire_film/gender/list/{{ gender.id }}">  {{ gender.name }} </a>
+                {% endfor %}
+            </ul>
+        </li>
+        <li>
+            Par auteur :
+            <ul>
+                {% for owner in owners %}
+                <a href="/annuaire_film/owners/list/{{ owner.id }}">  {{ owner.name }} {{ owner.lastname}} </a>
+                {% endfor %}
+            </ul>
+        </li>
+        <li>
+            Par année :
+            <ul>
+                {% for date in years %}
+                <a href="/annuaire_film/years/list/{{ date.releaseDate }}">  {{ date.releaseDate }} </a>
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>
+</nav>
 {% endblock %}
