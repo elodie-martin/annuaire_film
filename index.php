@@ -1,4 +1,7 @@
 <?php 
+	require_once("models/connect_bdd.php");
+	require_once("models/film_model.php");
+
 	if (isset($_SERVER["REQUEST_URI"])) {
 
 		$requete = explode("/", trim($_SERVER['REQUEST_URI'], "/"));
@@ -31,5 +34,13 @@
 		}
 	}
 
+// BARRE DE NAV
 	
+	// if (isset($_GET['askArray'])) {
+	// 	$films = array("films" => "");
+	// 	$films["films"] = getListOfAllFilms();
+	// 	echo json_encode($films); // Encode JSON 
+
+	// }
+
 ?>
