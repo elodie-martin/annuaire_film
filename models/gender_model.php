@@ -53,6 +53,7 @@ function getFilmsByGender($genderId) {
 			director.lastname,
 			director.name,
 			director.id,
+			poster.path,
 
 			(SELECT GROUP_CONCAT(DISTINCT g.name SEPARATOR ',')
 			 FROM genre g JOIN id_movie_genre gf ON g.id = gf.id_genre
@@ -67,7 +68,9 @@ function getFilmsByGender($genderId) {
 			JOIN id_movie_director ON id_movie_director.id_movie = movie.id
 			JOIN director ON  director.id = id_movie_director.id_director
 			JOIN id_movie_genre gf ON gf.id_movie = movie.id
-			JOIN genre g ON g.id = gf.id_genre WHERE gf.id_genre = :genderId GROUP BY movie.id";
+			JOIN genre g ON g.id = gf.id_genre
+			JOIN poster ON poster.path = movie.id
+			WHERE gf.id_genre = :genderId GROUP BY movie.id";
 
 	$response = $bdd->prepare( $sql );
 	$response->bindParam(':genderId', $genderId, PDO::PARAM_STR);
