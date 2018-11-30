@@ -48,5 +48,5 @@ function getFilmsByOwners($ownersId) {
     // Retourne le resultat de la requête
     return $owners;
 }
-
+ 
 ?>

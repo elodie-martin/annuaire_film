@@ -72,7 +72,7 @@ function getFilmsByGender($genderId) {
 			JOIN genre g ON g.id = gf.id_genre
 			WHERE gf.id_genre = :genderId GROUP BY movie.id";
 
-	$response = $bdd->prepare( $sql );
+	$response = $bdd->prepare( $sql ); 
 	$response->bindParam(':genderId', $genderId, PDO::PARAM_STR);
     $response->execute();
     $films = $response->fetchAll(PDO::FETCH_ASSOC);

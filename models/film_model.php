@@ -52,7 +52,7 @@ function getListOfAllFilms() {
     // Retourne le resultat de la requête
     return $list;
 
-}
+} 
 
 function getPosterUrlByIdMovie($idFilm) {
 
