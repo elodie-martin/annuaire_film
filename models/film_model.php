@@ -13,9 +13,9 @@ function getFilmById($idFilm) {
 			movie.title,
 			movie.releaseDate,
 			movie.description,
+			movie.id AS mId,
 			director.lastname,
 			director.name,
-			poster.path,
 			director.id AS directorId,
 		 	GROUP_CONCAT(genre.name) AS gname,
 		 	GROUP_CONCAT(genre.id) AS gid
@@ -24,7 +24,6 @@ function getFilmById($idFilm) {
 			JOIN genre ON genre.id = id_movie_genre.id_genre
 			JOIN id_movie_director ON id_movie_director.id_movie = movie.id
 			JOIN director ON director.id = id_movie_director.id_director
-			JOIN poster ON poster.id = movie.id
 			WHERE movie.id = :idFilm";
 
 	$response = $bdd->prepare( $sql );
@@ -55,6 +54,19 @@ function getListOfAllFilms() {
 
 }
 
+function getPosterUrlByIdMovie($idFilm) {
+
+	global $bdd;
+
+	$sql = "SELECT poster.path FROM poster WHERE poster.id = :idFilm";
+
+	$response = $bdd->prepare( $sql );
+	$response->bindParam(':idFilm', $idFilm, PDO::PARAM_STR);
+    $response->execute();
+    $poster = $response->fetchAll(PDO::FETCH_ASSOC);
+
+    return $poster;
+}
 
 
 ?>

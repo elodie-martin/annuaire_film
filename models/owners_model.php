@@ -24,7 +24,7 @@ function getFilmsByOwners($ownersId) {
 	// Accéder à la variable $bdd du fichier connect_bdd.php
 	global $bdd;
 
-	$sql = "SELECT movie.title, movie.id AS mId, movie.releaseDate, director.name AS prenom, director.lastname, director.id, poster.path,
+	$sql = "SELECT movie.title, movie.id AS mId, movie.releaseDate, director.name AS prenom, director.lastname, director.id,
 
 	(SELECT GROUP_CONCAT(DISTINCT g.name SEPARATOR ',')
 	FROM genre g JOIN id_movie_genre gf ON g.id = gf.id_genre
@@ -37,7 +37,6 @@ function getFilmsByOwners($ownersId) {
 	FROM movie 
 	INNER JOIN id_movie_director ON id_movie_director.id_movie = movie.id 
 	INNER JOIN director ON director.id = id_movie_director.id_director
-	INNER JOIN poster ON poster.id = movie.id 
 	WHERE director.id = :ownersId";
 
 

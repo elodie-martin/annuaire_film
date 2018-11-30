@@ -48,6 +48,7 @@ function getFilmsByYears($years) {
 			movie.title,
 			movie.releaseDate,
 			movie.description,
+			movie.id AS mId,
 			director.lastname,
 			director.name AS prenom,
 			director.id,

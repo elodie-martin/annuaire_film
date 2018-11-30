@@ -1,22 +1,4 @@
 {% extends "home_view.twig" %}
-{% block film %}
-<!-- // Chaques films est affiché sous forme de carte qui défileront dans un carroussel  -->
-<div class="card">
-    <h1 class="card-title">{{ film.title }}</h1>
-    <ul>
-        <li>Date de sortie : <a href="/annuaire_film/years/list/{{ film.releaseDate }}">{{ film.releaseDate }}</a></li>
-        <li>Auteur : <a href="/annuaire_film/owners/list/{{ film.directorId }}">{{ film.name }} {{ film.lastname }}</a></li>
-        <li>Genre:
-            {% set foo = film.gid|split(',') %}
-            {% set foo2 = film.gname|split(',') %}
-            {% for id in foo %}
-            <a href="/annuaire_film/gender/list/{{ id }}">{{ foo2[loop.index0] }}</a>
-            {% endfor %}
-        </li>
-    </ul>
-    <p class="card-description">{{ film.description }}</p>
-</div>
-{% endblock %}
 
 {% block nav %}
 <nav>
@@ -49,3 +31,22 @@
 </nav>
 {% endblock %}
 
+{% block film %}
+<!-- // Chaques films est affiché sous forme de carte qui défileront dans un carroussel  -->
+<div class="card" data-id="{{ film.mId }}"> <!-- Prêt pour intégrer Ajax -->
+    <h1 class="card-title">{{ film.title }}</h1>
+
+    <ul>
+        <li>Date de sortie : <a href="/annuaire_film/years/list/{{ film.releaseDate }}">{{ film.releaseDate }}</a></li>
+        <li>Auteur : <a href="/annuaire_film/owners/list/{{ film.directorId }}">{{ film.name }} {{ film.lastname }}</a></li>
+        <li>Genre:
+            {% set foo = film.gid|split(',') %}
+            {% set foo2 = film.gname|split(',') %}
+            {% for id in foo %}
+            <a href="/annuaire_film/gender/list/{{ id }}">{{ foo2[loop.index0] }}</a>
+            {% endfor %}
+        </li>
+    </ul>
+    <p class="card-description">{{ film.description }}</p>
+</div>
+{% endblock %}

@@ -3,7 +3,7 @@
 {% block years %}
 {% for elem in film %}
 <!-- // Chaques films est affiché sous forme de carte qui défileront dans un carroussel  -->   
-    <div class="card">
+    <div class="card" data-id="{{ elem.mId }}">
 
 		<h1 class="card-title">{{ elem.title }}</h1>
 
