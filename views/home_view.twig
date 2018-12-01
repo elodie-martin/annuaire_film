@@ -6,7 +6,7 @@
     <title>MOOVIZ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="annuaire de film de type allociné">
-    <base href="http://localhost:8080/annuaire_film/"> 
+    <base href="http://localhost:8080/annuaire_film/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/TarekRaafat/autoComplete.js@1.2.0/dist/css/autoComplete.css">
     <link href="https://fonts.googleapis.com/css?family=Nixie+One|Rammetto+One" rel="stylesheet">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
@@ -18,39 +18,83 @@
 
 <body>
     <header id="header" class="container-fluid">
-        <h1><a href="/annuaire_film">MOOVIZ</a></h1>
         {% block nav %}
-            <nav>
-                <ul>
-                    <li>
-                        Par genre :
-                        <ul>
+        <nav>
+            <span id="burger" class="navbar-toggler-icon">Canaillou</span>
+            <h1><a href="/annuaire_film">M<span>O</span>OVIZ</a></h1>
+            <div class="p-0 accordion show w-100 d-none" id="accordion">
+
+                <!-- Premier dropdown item -->
+
+                <div class="card p-0">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                                aria-expanded="true" aria-controls="collapseOne">
+                                Genre
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
                             {% for gender in genders %}
-                            <a href="/annuaire_film/gender/list/{{ gender.id }}">  {{ gender.name }} </a>
+                            <a href="/annuaire_film/gender/list/{{ gender.id }}"> {{ gender.name }} </a>
                             {% endfor %}
-                        </ul>
-                    </li>
-                    <li>
-                        Par auteur :
-                        <ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second dropdown item -->
+
+                <div class="card p-0">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                                aria-expanded="false" aria-controls="collapseTwo">
+                                Réalisateur
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body">
                             {% for owner in owners %}
-                            <a href="/annuaire_film/owners/list/{{ owner.id }}">  {{ owner.name }} {{ owner.lastname}} </a>
+                            <a href="/annuaire_film/owners/list/{{ owner.id }}"> {{ owner.name }} {{ owner.lastname}}
+                            </a>
                             {% endfor %}
-                        </ul>
-                    </li>
-                    <li>
-                        Par année :
-                        <ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Troisième dropdown item -->
+
+                <div class="card p-0">
+                    <div class="card-header" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+                                aria-expanded="false" aria-controls="collapseThree">
+                                Date de sortie
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body">
                             {% for date in years %}
-                            <a href="/annuaire_film/years/list/{{ date.releaseDate }}">  {{ date.releaseDate }} </a>
+                            <a href="/annuaire_film/years/list/{{ date.releaseDate }}"> {{ date.releaseDate }} </a>
                             {% endfor %}
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-    {% endblock %}
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </nav>
+
+        {% endblock %}
     </header> <!-- FIN HEADER -->
     <main class="container-fluid">
+
 
 
         <div class="owl-one owl-carousel">
@@ -62,14 +106,14 @@
         {% endfor %}
         </div>
       
-        
-
+   
         {% block film %}{% endblock %}
         {% block gender %}{% endblock %}
         {% block owners %}{% endblock %}
         {% block years %}{% endblock %}
 
         {% block citation %}
+
         <div class="owl-two owl-carousel owl-theme owl-nav-disappear owl-loaded owl-drag">
             <div class="owl-stage-outer">
                 <div class="owl-stage">
@@ -100,12 +144,14 @@
         {% endblock %}            
         
 
+
     </main> <!-- FIN MAIN -->
 
     <footer class="container-fluid">
-        <!-- <input id="autoComplete" type="text"> --> <!-- // SEARCH BAR -->
+        <!-- <input id="autoComplete" type="text"> -->
+        <!-- // SEARCH BAR -->
 
-        
+
     </footer> <!-- FIN FOOTER -->
 
  
@@ -118,6 +164,8 @@
     <script src="js/ajax_search_bar.js"></script>
     <script src="js/ajax_poster_films.js"></script>
     <script src="js/carousel.js"></script>
+    <script src="js/nav.js"></script>
+
 </body>
 
 </html>
