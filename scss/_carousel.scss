@@ -1,14 +1,14 @@
-
-.my-carousel {
+/* CAROUSEL OWL 1 */
+.owl-one {
 
 	width: 100vw;
 
-	.owl-nav {
+	.owl-nav, .owl-dots {
 		display: none;
 	}
-	
-	.item-carousel {
-		height: 80vh;
+
+	.item-carousel-one {
+		height: 90vh;
 		width: 100vw;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -26,6 +26,39 @@
 
 	}
 
-
 }
 
+
+/* CAROUSEL OWL 2 */
+.owl-two {
+	background-color: #1b1b1b;
+	height: 40vh;
+
+	/* .owl-nav, .owl-dots {
+		display: none;
+	} */
+	
+	
+
+	.item-carousel-two {
+		
+		height: 40vh;
+		p {
+			color: white;
+			font-family: 'Nixie One', cursive;
+			font-weight: bold;
+			margin: 0;
+			font-size: 14px;
+			text-align: center;
+
+		}
+
+		
+		em {
+			font-weight: lighter;
+			font-size: 13px;
+			color: white;
+		}
+	}
+
+}
