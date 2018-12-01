@@ -1,18 +1,32 @@
 /* CAROUSEL OWL 1 */
 .owl-one {
 
-	width: 100vw;
-
+	width: 100%;
+	background-color: #1b1b1b;
+	
 	.owl-nav, .owl-dots {
 		display: none;
 	}
 
 	.item-carousel-one {
-		height: 90vh;
-		width: 100vw;
+		height: 550px;
+		width: 100%;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
+
+		@media (min-width: 576px) {
+		 background-position: bottom;	
+		 background-size: 100%; 
+		  height: 800px; 
+		}
+
+		@media (min-width: 768px) { height: 1000px; }
+
+		@media (min-width: 1200px) { 
+			box-shadow: 5px 3px 10px 0px rgba(0,0,0,0.75);
+			justify-content: flex-start !important;
+		}
 
 		a {
 			display: inline-block;
@@ -22,6 +36,17 @@
 			font-size: 30px;
 			width: 100%;
 			text-align: center;
+			@media (min-width: 576px) { font-size: 40px; }
+			@media (min-width: 1200px) { 
+				height: 150px !important;
+				line-height: 150px;
+				background-color: rgba(150,0,0,1);
+				font-size: 30px;
+				
+				
+			}
+
+			
 		}
 
 	}
@@ -31,18 +56,43 @@
 
 /* CAROUSEL OWL 2 */
 .owl-two {
-	background-color: #1b1b1b;
-	height: 40vh;
-
-	/* .owl-nav, .owl-dots {
-		display: none;
-	} */
+	background-color: #1b1b1b; 
+	height: 200px;
+	@media (min-width: 576px) { height: 300px; }
+	@media (min-width: 1200px) { height: 500px; }
 	
+	.owl-nav {
+		color: white;
+		font-size: 30px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		top: 80px;
+		padding: 10px;
+	} 
+
+	.owl-prev {
+		position: absolute;
+		z-index: 99;
+		top: 100px;
+		left: 10;
+
+	}
+
+	.owl-next {
+		position: absolute;
+		z-index: 99;
+		top: 100px;
+		right: 10px;
+	}
 	
 
 	.item-carousel-two {
 		
-		height: 40vh;
+		height: 200px;
+		@media (min-width: 576px) { height: 300px; }
+		@media (min-width: 1200px) { height: 500px; }
 		p {
 			color: white;
 			font-family: 'Nixie One', cursive;
@@ -50,6 +100,8 @@
 			margin: 0;
 			font-size: 14px;
 			text-align: center;
+			@media (min-width: 576px) { font-size: 20px; }
+			@media (min-width: 1200px) { font-size: 30px; }
 
 		}
 
@@ -58,6 +110,8 @@
 			font-weight: lighter;
 			font-size: 13px;
 			color: white;
+			@media (min-width: 1200px) { font-size: 18px; }
+
 		}
 	}
 

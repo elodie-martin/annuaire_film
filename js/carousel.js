@@ -1,5 +1,10 @@
 $(document).ready(function(){
 
+
+
+
+
+
     $('.owl-one').owlCarousel({
         navigation : false, 
         loop:true,
@@ -12,12 +17,13 @@ $(document).ready(function(){
             },
             600:{
                 items:1,
-                nav:false
+                nav:true
             },
-            1000:{
-                items:1,
+            1200:{
+                items:3,
                 nav:true,
-                loop:false
+                loop:true,
+                margin: 20
             }
         },
         autoplay:true,
@@ -27,29 +33,39 @@ $(document).ready(function(){
 
 
     $('.owl-two').owlCarousel({
-        navigation : false, 
+        navigation : true, 
         loop:true,
         margin:0,
         responsiveClass:true,
         responsive:{
             0:{
                 items:1,
-                nav:true
+                nav:false,
+                loop:true,
+                dots: false
             },
             600:{
                 items:1,
-                nav:false
+                nav:false,
+                loop:true,
+                dots: false
+
+
             },
             1000:{
                 items:1,
-                nav:true,
-                loop:false
+                nav:false,
+                loop:true,
+                dots: false
             }
         },
         autoplay:true,
         autoplayTimeout:4500,
-        autoplayHoverPause:true
+        autoplayHoverPause:true,
+        navText : ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>']
     })
+
+
 
 
 });
