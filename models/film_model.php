@@ -44,7 +44,9 @@ function getListOfAllFilms() {
 	global $bdd;
 
 	// ICI METTRE LA REQUETE
-	$sql = "SELECT id, title FROM movie";
+	$sql = "SELECT movie.id, movie.title
+			FROM movie";
+			
 	$response = $bdd->prepare( $sql );
     $response->execute();
     $list = $response->fetchAll(PDO::FETCH_ASSOC);
