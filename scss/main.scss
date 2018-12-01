@@ -1,4 +1,5 @@
-@import url(./_card.scss);
+@import '_card.scss';
+@import '_nav.scss';
 
 #autoComplete:hover {
 	width: 20rem;
