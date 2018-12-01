@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:3306
--- Généré le :  Ven 30 Novembre 2018 à 16:34
+-- Généré le :  Ven 30 Novembre 2018 à 21:58
 -- Version du serveur :  10.3.11-MariaDB-1:10.3.11+maria~bionic-log
 -- Version de PHP :  7.2.10-0ubuntu0.18.04.1
 
@@ -224,14 +224,11 @@ INSERT INTO `poster` (`id`, `path`) VALUES
 (10, '../img/affiches/venom.jpg'),
 (11, '../img/affiches/kimi_no_na_wa.jpg'),
 (12, '../img/affiches/la_beuze.jpg'),
-(15, '../img/affiches/asterix_et_obelix_:_mission_cleopatre.jpg'),
-(16, '../img/affiches/ready_player_one.jpg'),
-(17, '../img/affiches/harry_potter_a_l_ecole_des_sorciers.jpg'),
-(18, '../img/affiches/asterix_et_obelix_:_mission_cleopatre.jpg'),
-(19, '../img/affiches/ready_player_one.jpg'),
-(20, '../img/affiches/harry_potter_a_l_ecole_des_sorciers.jpg'),
-(21, '../img/affiches/le_seigneur_des_anneaux_:_la_communaute_de_la_anneau.jpg'),
-(22, '../img/affiches/ca.jpg');
+(13, '../img/affiches/asterix_et_obelix_:_mission_cleopatre.jpg'),
+(14, '../img/affiches/ready_player_one.jpg'),
+(15, '../img/affiches/harry_potter_a_l_ecole_des_sorciers.jpg'),
+(16, '../img/affiches/le_seigneur_des_anneaux_:_la_communaute_de_la_anneau.jpg'),
+(17, '../img/affiches/ca.jpg');
 
 --
 -- Index pour les tables exportées
