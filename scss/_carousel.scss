@@ -1,0 +1,31 @@
+
+.my-carousel {
+
+	width: 100vw;
+
+	.owl-nav {
+		display: none;
+	}
+	
+	.item-carousel {
+		height: 80vh;
+		width: 100vw;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+
+		a {
+			display: inline-block;
+			font-family: 'Nixie One', cursive;
+			background-color: rgba(200,0,0,0.7);
+			color: white;
+			font-size: 30px;
+			width: 100%;
+			text-align: center;
+		}
+
+	}
+
+
+}
+

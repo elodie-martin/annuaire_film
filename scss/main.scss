@@ -1,5 +1,9 @@
-@import url(./_card.scss);
+@import '_carousel.scss';
 
 #autoComplete:hover {
 	width: 20rem;
+}
+
+.container-fluid {
+	padding: 0px;
 }
