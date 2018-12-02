@@ -1,9 +1,9 @@
 <?php 
 
     // Fichier pour se connecter à la base de donnée.d
-    $baseurl = "http://localhost/annuaire_film/";
+    $baseurl = "http://localhost:8080/annuaire_film/";
 	$username = 'root';
-	$password = '20059478lrlr';
+	$password = 'online@2017';
 	$database ='projet_annuaire_films';
   
 	$host = 'localhost';
