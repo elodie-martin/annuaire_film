@@ -1,10 +1,11 @@
 header {
+    background-color: #000000;
 
     nav {
-        background-color: #000000;
 
-        span {
-            color: #8b0a15;
+        .fas {
+            color: #8b0a15 !important;
+
         }
 
         h1 {
@@ -18,19 +19,72 @@ header {
         }
 
         div {
-            
-            div {
-                background-color: #000000;
-
-                h5 {
-                    color: #ffffff;
-
-                    button {
-                        color: #ffffff
-                    }
-                }
-            }
+            color: #8b0a15 !important
         }
 
     }
+
+    .accordion {
+
+        #headingOne {
+            background-color: #000000;
+
+            h5 {
+                button {
+                    color: #ffffff;
+                }
+            }
+
+        }
+
+        #collapseOne {
+            background-color: #1b1b1b;
+
+            a {
+                color: #ffffff;
+            }
+
+        }
+
+        #headingTwo {
+            background-color: #000000;
+
+            h5 {
+                button {
+                    color: #ffffff;
+                }
+            }
+
+        }
+
+        #collapseTwo {
+            background-color: #1b1b1b;
+
+            a {
+                color: #ffffff;
+            }
+
+        }
+
+        #headingThree {
+            background-color: #000000;
+
+            h5 {
+                button {
+                    color: #ffffff;
+                }
+            }
+
+        }
+
+        #collapseThree {
+            background-color: #1b1b1b;
+
+            a {
+                color: #ffffff;
+            }
+
+        }
+    }
+
 }
