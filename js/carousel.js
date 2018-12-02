@@ -15,16 +15,18 @@ $(document).ready(function(){
                 items:1,
                 nav:true
             },
-            600:{
-                items:1,
-                nav:true
+            760:{
+                items:2,
+                nav:true,
+                margin : 20
             },
             1200:{
-                items:3,
+                items:4,
                 nav:true,
                 loop:true,
                 margin: 20
             }
+
         },
         autoplay:true,
         autoplayTimeout:3000,
