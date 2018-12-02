@@ -160,12 +160,42 @@
 
     </main> <!-- FIN MAIN -->
 
-    <footer class="container-fluid">
-        <!-- <input id="autoComplete" type="text"> -->
-        <!-- // SEARCH BAR -->
+    {% block footer %}
+        <footer class="container-fluid pt-5 pb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 text-white d-flex justify-content-center justify-content-sm-center justify-content-md-start justify-content-lg-start justify-content-xl-start">
+                        <div class="d-flex align-items-center">
+                            <p class="logo text-uppercase mt-3"><a href="/annuaire_film" class="text-white">M<span>o</span>oviz</a></p>
+                        </div>
+                    </div>
 
-
-    </footer> <!-- FIN FOOTER -->
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 text-white text-center">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <div class="navbar-collapse d-lg-flex d-xl-flex justify-content-center" id="navbarNavAltMarkup">
+                                <div class="navbar-nav">
+                                    <div class="nav-item nav-link text-white"><a class="text-white" target="_blank" href="https://www.linkedin.com/in/lucas-robin-b70963159/">Lucas Robin</a> <span class="text-white ml-3">|</span> </div>
+                                    <div class="nav-item nav-link text-white"><a class="text-white" target="_blank" href="https://www.linkedin.com/in/antonin-landry-43a728162/">Antonin Landry</a> <span class="text-white ml-3">|</span> </div>
+                                    <div class="nav-item nav-link text-white"><a class="text-white" target="_blank" href="https://www.linkedin.com/in/elodie-martin-05b964115/">Elodie Martin</a></div>
+                                </div>
+                            </div>
+                        </nav>
+                        <p>© 2018 Mooviz | Mentions légales</p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 text-white d-flex justify-content-center justify-content-sm-center justify-content-md-end justify-content-lg-end justify-content-xl-end align-items-center">
+                       <div>
+                            <p class="text-center">Suivez <span class="text-uppercase">Mooviz</span></p>
+                            <div class="d-flex">
+                                <div class="circle-facebook mr-2"><a class="text-white" href="#"><i class="fab fa-facebook-f"></i></a></div>
+                                <div class="circle-twitter mr-2"><a class="text-white" href="#"><i class="fab fa-twitter"></i></a></div>
+                                <div class="circle-instagram"><a class="text-white" href="#"><i class="fab fa-instagram"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer> <!-- FIN FOOTER -->
+    {% endblock %}  
 
  
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
