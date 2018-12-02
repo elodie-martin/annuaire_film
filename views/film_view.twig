@@ -2,8 +2,13 @@
 
 {% block nav %}
 
-           <nav class="container d-flex justify-content-between align-items-center">
+          <nav id="nav1" class="container d-flex justify-content-between align-items-center">
             <i id="burger" class="col-2 fas fa-bars p-0"></i>
+            <h1 class="col-8 my-1 d-flex justify-content-center"><a href="/annuaire_film">M<span>O</span>OVIZ</a></h1>
+            <div class="col-2 p-0">Loupe</div>
+        </nav>
+
+        <nav id="nav2" class="container d-flex justify-content-between align-items-center">
             <h1 class="col-8 my-1 d-flex justify-content-center"><a href="/annuaire_film">M<span>O</span>OVIZ</a></h1>
             <div class="col-2 p-0">Loupe</div>
         </nav>
@@ -25,7 +30,7 @@
                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                         <div class="card-body">
                             {% for gender in genders %}
-                            <a class="col-3 py-4" href="/annuaire_film/gender/list/{{ gender.id }}"> {{ gender.name }} </a>
+                            <a class="col-3" href="/annuaire_film/gender/list/{{ gender.id }}"> {{ gender.name }} </a>
                             {% endfor %}
                         </div>
                     </div>
@@ -45,7 +50,7 @@
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                         <div class="card-body ">
                             {% for owner in owners %}
-                            <a class="col-6 p-auto" href="/annuaire_film/owners/list/{{ owner.id }}"> {{ owner.name }} {{ owner.lastname}}
+                            <a class="col-6" href="/annuaire_film/owners/list/{{ owner.id }}"> {{ owner.name }} {{ owner.lastname}}
                             </a>
                             {% endfor %}
                         </div>
@@ -66,7 +71,7 @@
                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                         <div class="card-body">
                             {% for date in years %}
-                            <a class="col-3 py-4" href="/annuaire_film/years/list/{{ date.releaseDate }}"> {{ date.releaseDate }} </a>
+                            <a class="col-3" href="/annuaire_film/years/list/{{ date.releaseDate }}"> {{ date.releaseDate }} </a>
                             {% endfor %}
                         </div>
                     </div>
