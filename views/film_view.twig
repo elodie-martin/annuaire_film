@@ -78,29 +78,38 @@
 
 
 
+{% block welcom %} 
+
+{% endblock %}    
+
+
+
+
 {% block film %}
 
 
-<div class="wrapper-moovie d-flex justify-content-center align-items-center">
+<div class="wrapper-moovie d-flex flex-column justify-content-center align-items-center">
     
+    <h1 class="moovie-title">{{ film.title }}</h1>
 
-
-    <!-- // Chaques films est affiché sous forme de carte qui défileront dans un carroussel  -->
     <div class="moovie" data-id="{{ film.mId }}"> <!-- Prêt pour intégrer Ajax -->
-        <h1 class="moovie-title">{{ film.title }}</h1>
+        <div class="moovie-wrapper-info">
 
-        <ul>
-            <li>Date de sortie : <a href="/annuaire_film/years/list/{{ film.releaseDate }}">{{ film.releaseDate }}</a></li>
-            <li>Auteur : <a href="/annuaire_film/owners/list/{{ film.directorId }}">{{ film.name }} {{ film.lastname }}</a></li>
-            <li>Genre:
-                {% set foo = film.gid|split(',') %}
-                {% set foo2 = film.gname|split(',') %}
-                {% for id in foo %}
-                <a href="/annuaire_film/gender/list/{{ id }}">{{ foo2[loop.index0] }}</a>
-                {% endfor %}
-            </li>
-        </ul>
-        <p class="moovie-description">{{ film.description }}</p>
+            <p class="moovie-description">{{ film.description }}</p>
+            <ul>
+
+                <li>Date de sortie : <a href="/annuaire_film/years/list/{{ film.releaseDate }}">{{ film.releaseDate }}</a></li>
+                <li>Auteur : <a href="/annuaire_film/owners/list/{{ film.directorId }}">{{ film.name }} {{ film.lastname }}</a></li>
+                <li>Genre:
+                    {% set foo = film.gid|split(',') %}
+                    {% set foo2 = film.gname|split(',') %}
+                    {% for id in foo %}
+                    <a href="/annuaire_film/gender/list/{{ id }}">{{ foo2[loop.index0] }}</a>
+                    {% endfor %}
+                </li>
+            </ul>
+        </div>    
+        
     </div>
 
 
@@ -108,5 +117,4 @@
 
 
 {% endblock %}
-
 
