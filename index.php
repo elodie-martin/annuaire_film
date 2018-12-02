@@ -43,4 +43,9 @@
 
 	// }
 
+	if (isset($_GET['askImg'])) {
+		$res = getPosterUrlByIdMovie($_GET['askImg']);
+		echo json_encode($res[0]);
+		
+	}
 ?>

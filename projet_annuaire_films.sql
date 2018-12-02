@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:3306
--- Généré le :  Mer 28 Novembre 2018 à 18:38
+-- Généré le :  Ven 30 Novembre 2018 à 21:58
 -- Version du serveur :  10.3.11-MariaDB-1:10.3.11+maria~bionic-log
 -- Version de PHP :  7.2.10-0ubuntu0.18.04.1
 
@@ -196,6 +196,40 @@ INSERT INTO `movie` (`id`, `title`, `description`, `releaseDate`) VALUES
 (16, 'Le seigneur des Anneaux : La communauté de l\'anneau', 'Dans ce chapitre de la trilogie, le jeune et timide Hobbit, Frodon Sacquet, hérite d\'un anneau. Bien loin d\'être une simple babiole, il s\'agit de l\'Anneau Unique, un instrument de pouvoir absolu qui permettrait à Sauron, le Seigneur des ténèbres, de régner sur la Terre du Milieu et de réduire en esclavage ses peuples. À moins que Frodon, aidé d\'une Compagnie constituée de Hobbits, d\'Hommes, d\'un Magicien, d\'un Nain, et d\'un Elfe, ne parvienne à emporter l\'Anneau à travers la Terre du Milieu jusqu\'à la Crevasse du Destin, lieu où il a été forgé, et à le détruire pour toujours.\r\n                                                            L\'issue de l\'histoire à venir est intimement liée au sort de la Compagnie.', 2001),
 (17, 'Ca', 'Une créature sans nom, Ca, répand la terreur et la mort dans la petite ville de Derry. Jusqu\'à ce qu\'une bande d\'enfants mette fin aux agissements du monstre. Trente plus tard, les sept amis se réunissent à Derry : Ca est revenu...', 1990);
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `poster`
+--
+
+CREATE TABLE `poster` (
+  `id` int(2) NOT NULL,
+  `path` varchar(140) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `poster`
+--
+
+INSERT INTO `poster` (`id`, `path`) VALUES
+(1, '../img/affiches/interstellar.jpg'),
+(2, '../img/affiches/inception.jpg'),
+(3, '../img/affiches/inglorious_basterds.jpg'),
+(4, '../img/affiches/la_cite_de_la_peur.jpg'),
+(5, '../img/affiches/la_haut.jpg'),
+(6, '../img/affiches/fight_club.jpg'),
+(7, '../img/affiches/aga.jpg'),
+(8, '../img/affiches/first_man.jpg'),
+(9, '../img/affiches/millenium.jpg'),
+(10, '../img/affiches/venom.jpg'),
+(11, '../img/affiches/kimi_no_na_wa.jpg'),
+(12, '../img/affiches/la_beuze.jpg'),
+(13, '../img/affiches/asterix_et_obelix_:_mission_cleopatre.jpg'),
+(14, '../img/affiches/ready_player_one.jpg'),
+(15, '../img/affiches/harry_potter_a_l_ecole_des_sorciers.jpg'),
+(16, '../img/affiches/le_seigneur_des_anneaux_:_la_communaute_de_la_anneau.jpg'),
+(17, '../img/affiches/ca.jpg');
+
 --
 -- Index pour les tables exportées
 --
@@ -213,6 +247,12 @@ ALTER TABLE `genre`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `poster`
+--
+ALTER TABLE `poster`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT pour les tables exportées
 --
 
@@ -226,6 +266,11 @@ ALTER TABLE `director`
 --
 ALTER TABLE `genre`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT pour la table `poster`
+--
+ALTER TABLE `poster`
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,7 +1,6 @@
-
+/*
 console.log("JAVASCRIPT OK");
-window.onload = () => {
-let grocery = [];
+let grocery = [];*/
 // let text = document.querySelector("#autoComplete"); 
 // console.log(text);
 
@@ -19,7 +18,7 @@ let grocery = [];
 // }
 
 
-    fetch(`annuaire_films/index.php?askArray`)
+/*    fetch(`annuaire_films/index.php?askArray`)
         .then((res) => {
             return res.json();
         })
@@ -31,9 +30,9 @@ let grocery = [];
         	}
         })
         .catch((err) => {
-            if (err) { log(err); };
+            if (err) { console.log(err); };
         })
-
+*/
 
 // The app instance creator
 // new autoComplete({
@@ -51,4 +50,4 @@ let grocery = [];
 //     }
 // });
 
-}
+/*}*/

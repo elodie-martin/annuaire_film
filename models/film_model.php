@@ -13,6 +13,7 @@ function getFilmById($idFilm) {
 			movie.title,
 			movie.releaseDate,
 			movie.description,
+			movie.id AS mId,
 			director.lastname,
 			director.name,
 			director.id AS directorId,
@@ -43,7 +44,9 @@ function getListOfAllFilms() {
 	global $bdd;
 
 	// ICI METTRE LA REQUETE
-	$sql = "SELECT id, title FROM movie";
+	$sql = "SELECT movie.id, movie.title
+			FROM movie";
+			
 	$response = $bdd->prepare( $sql );
     $response->execute();
     $list = $response->fetchAll(PDO::FETCH_ASSOC);
@@ -51,8 +54,21 @@ function getListOfAllFilms() {
     // Retourne le resultat de la requête
     return $list;
 
-}
+} 
 
+function getPosterUrlByIdMovie($idFilm) {
+
+	global $bdd;
+
+	$sql = "SELECT poster.path FROM poster WHERE poster.id = :idFilm";
+
+	$response = $bdd->prepare( $sql );
+	$response->bindParam(':idFilm', $idFilm, PDO::PARAM_STR);
+    $response->execute();
+    $poster = $response->fetchAll(PDO::FETCH_ASSOC);
+
+    return $poster;
+}
 
 
 ?>

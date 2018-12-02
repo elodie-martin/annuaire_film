@@ -6,77 +6,166 @@
     <title>MOOVIZ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="annuaire de film de type allociné">
-    <base href="http://localhost:8080/annuaire_film/"> 
+    <base href="http://localhost/annuaire_film/"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/TarekRaafat/autoComplete.js@1.2.0/dist/css/autoComplete.css">
+    <link href="https://fonts.googleapis.com/css?family=Nixie+One|Rammetto+One" rel="stylesheet">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="node_modules/owl.carousel/dist/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="./scss/main.css">
 
 </head>
 
 <body>
     <header id="header" class="container-fluid">
-        <h1><a href="/annuaire_film">MOOVIZ</a></h1>
         {% block nav %}
-            <nav>
-                <ul>
-                    <li>
-                        Par genre :
-                        <ul>
+        <nav>
+            <span id="burger" class="navbar-toggler-icon">Canaillou</span>
+            <h1><a href="/annuaire_film">M<span>O</span>OVIZ</a></h1>
+            <div class="p-0 accordion show w-100 d-none" id="accordion">
+
+                <!-- Premier dropdown item -->
+
+                <div class="card p-0">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                                aria-expanded="true" aria-controls="collapseOne">
+                                Genre
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
                             {% for gender in genders %}
-                            <a href="/annuaire_film/gender/list/{{ gender.id }}">  {{ gender.name }} </a>
+                            <a href="/annuaire_film/gender/list/{{ gender.id }}"> {{ gender.name }} </a>
                             {% endfor %}
-                        </ul>
-                    </li>
-                    <li>
-                        Par auteur :
-                        <ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second dropdown item -->
+
+                <div class="card p-0">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                                aria-expanded="false" aria-controls="collapseTwo">
+                                Réalisateur
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body">
                             {% for owner in owners %}
-                            <a href="/annuaire_film/owners/list/{{ owner.id }}">  {{ owner.name }} {{ owner.lastname}} </a>
+                            <a href="/annuaire_film/owners/list/{{ owner.id }}"> {{ owner.name }} {{ owner.lastname}}
+                            </a>
                             {% endfor %}
-                        </ul>
-                    </li>
-                    <li>
-                        Par année :
-                        <ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Troisième dropdown item -->
+
+                <div class="card p-0">
+                    <div class="card-header" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+                                aria-expanded="false" aria-controls="collapseThree">
+                                Date de sortie
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body">
                             {% for date in years %}
-                            <a href="/annuaire_film/years/list/{{ date.releaseDate }}">  {{ date.releaseDate }} </a>
+                            <a href="/annuaire_film/years/list/{{ date.releaseDate }}"> {{ date.releaseDate }} </a>
                             {% endfor %}
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-    {% endblock %}
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </nav>
+
+        {% endblock %}
     </header> <!-- FIN HEADER -->
     <main class="container-fluid">
-        
-        <!-- // home controller -->
-        {% for array in films %}
-          
-                <li> <a href="film/show/{{ array.id }}"> {{ array.title }} </a> </li>
-        
-        {% endfor %}
-        
 
+
+
+        <div class="owl-one owl-carousel">
+        <!-- // home controller -->
+        {% for elem in films %}
+                <div class="item-carousel-one d-flex flex-column justify-content-end align-items-center" data-id="{{ elem.id }}">
+                    <a href="film/show/{{ elem.id }}"> {{ elem.title }} </a>          
+                </div>
+        {% endfor %}
+        </div>
+      
+   
         {% block film %}{% endblock %}
         {% block gender %}{% endblock %}
         {% block owners %}{% endblock %}
         {% block years %}{% endblock %}
+
+        {% block citation %}
+
+        <div class="owl-two owl-carousel owl-theme owl-nav-disappear owl-loaded owl-drag">
+            <div class="owl-stage-outer">
+                <div class="owl-stage">
+                    <div class="item-carousel-two owl-item quote-1 d-flex flex-column justify-content-center align-items-center px-5">
+                        <p>C'est seulement quand on a tout perdu qu'on est libre de faire tout ce qu'on veut. </p>
+                        <em class="p-3">Fight Club - Tyler</em>
+                    </div>
+                    <div class="item-carousel-two owl-item quote-2 d-flex flex-column  justify-content-center align-items-center px-5">
+                        <p>Et tu connaîtras pourquoi mon nom est l'éternel quand sur toi, s'abattra la vengeance du tout puissant !</p>
+                        <em class="p-3">Pulp Fiction - Jules</em>
+                    </div>
+                    <div class="item-carousel-two owl-item quote-3 d-flex flex-column justify-content-center align-items-center px-5">
+                        <p>Mon père m'a appris que la peur est toujours constante, mais que l'accepter te rend plus fort... </p>
+                        <em class="p-3">300 - Leonidas</em>
+                    </div>
+                    <div class="item-carousel-two owl-item quote-4 d-flex flex-column  justify-content-center align-items-center px-5">
+                        <p>Comment est votre blanquette ?</p>
+                        <em class="p-3">OSS 117 - Hubert</em>
+                    </div>
+                    <div class="item-carousel-two owl-item quote-5 d-flex flex-column  justify-content-center align-items-center px-5">
+                        <p>Chuuut ! Ya bambi qui fait dodo.</p>
+                        <em class="p-3">Les Trois Frère - Didier</em>
+                    </div>
+                </div>    
+            </div>
+        </div>
+
+        {% endblock %}            
         
+
 
     </main> <!-- FIN MAIN -->
 
     <footer class="container-fluid">
-        <input id="autoComplete" type="text"> <!-- // SEARCH BAR -->
+        <!-- <input id="autoComplete" type="text"> -->
+        <!-- // SEARCH BAR -->
 
-        
+
     </footer> <!-- FIN FOOTER -->
 
-
+ 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" icrossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/gh/TarekRaafat/autoComplete.js@1.2.0/dist/js/autoComplete.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="js/ajax_search_bar.js"></script>
+    <script src="js/ajax_poster_films.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/nav.js"></script>
+
 </body>
 
 </html>

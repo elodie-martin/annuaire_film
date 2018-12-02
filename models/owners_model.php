@@ -35,8 +35,8 @@ function getFilmsByOwners($ownersId) {
 	WHERE gf.id_movie = movie.id) AS genresId
 
 	FROM movie 
-	INNER JOIN id_movie_director on id_movie_director.id_movie = movie.id 
-	INNER JOIN director on director.id = id_movie_director.id_director 
+	INNER JOIN id_movie_director ON id_movie_director.id_movie = movie.id 
+	INNER JOIN director ON director.id = id_movie_director.id_director
 	WHERE director.id = :ownersId";
 
 
@@ -48,5 +48,5 @@ function getFilmsByOwners($ownersId) {
     // Retourne le resultat de la requête
     return $owners;
 }
-
+ 
 ?>
