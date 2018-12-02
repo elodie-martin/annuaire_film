@@ -1,10 +1,5 @@
 $(document).ready(function(){
 
-
-
-
-
-
     $('.owl-one').owlCarousel({
         navigation : false, 
         loop:true,
@@ -32,6 +27,16 @@ $(document).ready(function(){
         autoplayTimeout:3000,
         autoplayHoverPause:true
     })
+
+    $('.owl-one').on('mousewheel', '.item-carousel-one', function (e) {
+        /*console.log(e.deltaY);*/
+        if (e.deltaY>0) {
+            $('.owl-one').trigger('next.owl');
+        } else {
+            $('.owl-one').trigger('prev.owl');
+        }
+        e.preventDefault();
+    });
 
 
     $('.owl-two').owlCarousel({
