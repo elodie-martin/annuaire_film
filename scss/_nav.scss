@@ -10,7 +10,7 @@ header {
             color: #8b0a15 !important;
 
         }
-
+        .fas:hover {cursor: pointer}
         h1 {
             a {
                 font-family: 'Titan One', cursive;
@@ -22,7 +22,32 @@ header {
                 }
             }
         }
+        #genre:hover {cursor: pointer}
+        #director:hover {cursor: pointer}
+        #date:hover {cursor: pointer}
+        }
+        #collapseOneLg {
+            background-color: #1b1b1b;
 
+            a {
+                color: #ffffff;
+            }
+
+        }
+        #collapseTwoLg {
+            background-color: #1b1b1b;
+
+            a {
+                color: #ffffff;
+            }
+
+        }
+        #collapseThreeLg {
+            background-color: #1b1b1b;
+
+            a {
+                color: #ffffff;
+            }
     }
 
     .accordion {
