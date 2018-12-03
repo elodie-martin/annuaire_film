@@ -21,3 +21,14 @@
 // }
 
 button:focus {outline:0;}
+
+#up_btn {
+	background: rgba(255, 255, 255,0.8);
+	color: #8B0A15;
+	border: none;
+	width: 40px;
+	&:focus {
+		box-shadow: none;
+	}
+}
+
