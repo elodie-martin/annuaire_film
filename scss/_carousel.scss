@@ -8,6 +8,10 @@
 		display: none;
 	}
 
+	a {
+		text-decoration: none;
+	}
+
 	.item-carousel-one {
 		height: 550px;
 		width: 100%;
@@ -33,7 +37,7 @@
 			/* justify-content: flex-start !important; */
 		}
 
-		a {
+		p {
 			display: inline-block;
 			font-family: 'Nixie One', cursive;
 			background-color: rgba(200,0,0,0.7);
@@ -41,6 +45,7 @@
 			font-size: 25px;
 			width: 100%;
 			text-align: center;
+			margin-bottom: 0;
 			@media (min-width: 576px) { font-size: 40px; }
 			@media (min-width: 768px) { }
 			@media (min-width: 992px) { 

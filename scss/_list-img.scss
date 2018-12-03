@@ -3,14 +3,18 @@
 }
 
 .container-list {
-    margin-top: 45px;
-    margin-bottom: 5px;
-    padding: 0;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    @media (max-width: 991px) {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
 }
 
 .mycard-list {
     background-size: cover;
     height: 375px;
+    box-shadow: 7px 7px 31px -6px rgba(0,0,0,0.75);
     @media (max-width: 1199px) { 
         height: 320px;
     }
