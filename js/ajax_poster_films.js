@@ -20,6 +20,9 @@ window.onload = () => {
                 cardDiv.style.backgroundImage = `url(annuaire_film/${res.path})`;
 
             })
-            .catch((err) => { if (err) { console.log(err) } })
+            .catch((err) => { if (err) throw err; })
     }
+
+
+    
 }

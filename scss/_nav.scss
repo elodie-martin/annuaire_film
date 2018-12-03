@@ -1,14 +1,20 @@
 header {
 
-    nav {
-        background-color: #000000;
+    font-family: "Nixie One", cursive;
+    background-color: #000000;
+    
 
-        span {
-            color: #8b0a15;
+    nav {
+
+        .fas {
+            color: #8b0a15 !important;
+
         }
 
         h1 {
             a {
+                font-family: 'Titan One', cursive;
+                font-size: 28px;
                 color: #ffffff;
 
                 span {
@@ -17,20 +23,79 @@ header {
             }
         }
 
-        div {
-            
-            div {
-                background-color: #000000;
+    }
 
-                h5 {
+    .accordion {
+
+        #headingOne {
+            background-color: #111111;
+
+            h5 {
+                button {
                     color: #ffffff;
-
-                    button {
-                        color: #ffffff
-                    }
                 }
             }
+
         }
 
+        #collapseOne {
+            background-color: #1b1b1b;
+
+            a {
+                color: #ffffff;
+            }
+
+        }
+
+        #headingTwo {
+            background-color: #111111;
+
+            h5 {
+                button {
+                    color: #ffffff;
+                }
+            }
+
+        }
+
+        #collapseTwo {
+            background-color: #1b1b1b;
+
+            a {
+                color: #ffffff;
+            }
+
+        }
+
+        #headingThree {
+            background-color: #111111;
+
+            h5 {
+                button {
+                    color: #ffffff;
+                }
+            }
+
+        }
+
+        #collapseThree {
+            background-color: #1b1b1b;
+
+            a {
+                color: #ffffff;
+            }
+
+        }
     }
+    
 }
+
+@media (max-width: 575px) {}
+
+@media (min-width: 576px) and (max-width: 767px) {}
+
+@media (min-width: 768px) and (max-width: 991px) {}
+
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+@media (min-width: 1200px) {}
