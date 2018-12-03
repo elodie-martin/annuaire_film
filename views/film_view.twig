@@ -88,15 +88,20 @@
 {% block film %}
 <section class="moovie-section">
     
-
-   <h1 class="moovie-title">{{ film.title }}</h1>
+    <div class="moovie-title d-flex justify-content-center align-items-center">
+        <button id="btn-info" type="button" class="d-flex justify-content-center align-items-center rounded-circle ">
+            <i id="btn-info-logo" class="fas fa-info-circle"></i>        
+        </button>
+        <h1 class="moovie-h1">{{ film.title }}</h1>
+    </div>
 
 <div class="wrapper-moovie d-flex flex-column justify-content-center align-items-center">
  
 
     <div class="moovie" data-id="{{ film.mId }}"> <!-- Prêt pour intégrer Ajax -->
+        
         <div class="moovie-wrapper-info">
-
+    
             <p class="moovie-description">{{ film.description }}</p>
             <ul>
 
