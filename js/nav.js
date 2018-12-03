@@ -34,7 +34,7 @@ genre.addEventListener('click', function () {
         collapseThreeLg.classList.remove('d-block');
         collapseThreeLg.classList.add('d-none');
 
-    } else
+    }
 
 })
 
