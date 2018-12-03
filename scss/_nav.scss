@@ -7,6 +7,7 @@ header {
 
         .fas {
             color: #8b0a15 !important;
+            font-size: 30px;
 
         }
         .fas:hover {cursor: pointer}
@@ -15,7 +16,16 @@ header {
                 font-family: 'Titan One', cursive;
                 font-size: 28px;
                 color: #ffffff;
-
+                &:focus {
+                    text-decoration: none;
+                    color: #8b0a15 ;
+                }
+                &:active {
+                    color: #8b0a15 ;
+                }
+                &:link {
+                    color: #8b0a15 ;
+                }
                 span {
                     color: #8b0a15;
                 }
@@ -57,6 +67,10 @@ header {
             h5 {
                 button {
                     color: #ffffff;
+                    font-weight: bold;
+                    &:focus {
+                        text-decoration: none;
+                    }
                 }
             }
 
@@ -67,6 +81,9 @@ header {
 
             a {
                 color: #ffffff;
+                font-weight: bold;
+                font-size: 15px;
+
             }
 
         }
@@ -77,6 +94,10 @@ header {
             h5 {
                 button {
                     color: #ffffff;
+                    font-weight: bold;
+                    &:focus {
+                        text-decoration: none;
+                    }
                 }
             }
 
@@ -87,6 +108,8 @@ header {
 
             a {
                 color: #ffffff;
+                font-weight: bold;
+                font-size: 15px;
             }
 
         }
@@ -97,6 +120,10 @@ header {
             h5 {
                 button {
                     color: #ffffff;
+                    font-weight: bold;
+                    &:focus {
+                        text-decoration: none;
+                    }
                 }
             }
 
@@ -107,6 +134,8 @@ header {
 
             a {
                 color: #ffffff;
+                font-weight: bold;
+                font-size: 15px;
             }
 
         }
@@ -123,3 +152,16 @@ header {
 @media (min-width: 992px) and (max-width: 1199px) {}
 
 @media (min-width: 1200px) {}
+
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+    a {
+        text-align: center;
+
+    }
+}
