@@ -14,3 +14,57 @@ burger.addEventListener('click', function () {
     }
 
 })
+
+const genre = document.querySelector('#genre');
+const collapseOneLg = document.querySelector('#collapseOneLg');
+const director = document.querySelector('#director');
+const collapseTwoLg = document.querySelector('#collapseTwoLg');
+const date = document.querySelector('#date');
+const collapseThreeLg = document.querySelector('#collapseThreeLg');
+
+
+genre.addEventListener('click', function () {
+
+    if (collapseOneLg.classList.contains('d-none')) {
+
+        collapseOneLg.classList.remove('d-none');
+        collapseOneLg.classList.add('d-block');
+        collapseTwoLg.classList.remove('d-block');
+        collapseTwoLg.classList.add('d-none');
+        collapseThreeLg.classList.remove('d-block');
+        collapseThreeLg.classList.add('d-none');
+
+    } else
+
+})
+
+director.addEventListener('click', function () {
+
+    if (collapseTwoLg.classList.contains('d-none')) {
+
+        collapseOneLg.classList.remove('d-block');
+        collapseOneLg.classList.add('d-none');
+        collapseTwoLg.classList.remove('d-none');
+        collapseTwoLg.classList.add('d-block');
+        collapseTwoLg.classList.remove('d-block');
+        collapseTwoLg.classList.add('d-none');
+
+    }
+
+})
+
+
+date.addEventListener('click', function () {
+
+    if (collapseThreeLg.classList.contains('d-none')) {
+
+        collapseOneLg.classList.remove('d-block');
+        collapseOneLg.classList.add('d-none');
+        collapseTwoLg.classList.remove('d-block');
+        collapseTwoLg.classList.add('d-none');
+        collapseThreeLg.classList.remove('d-none');
+        collapseThreeLg.classList.add('d-block');
+
+    }
+
+})
