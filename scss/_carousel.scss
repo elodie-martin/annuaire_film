@@ -3,9 +3,13 @@
 
 	width: 100%;
 	background-color: #1b1b1b;
-	
+	/* @media (min-width: 1200px) { padding: 100px 0px; } */
 	.owl-nav, .owl-dots {
 		display: none;
+	}
+
+	a {
+		text-decoration: none;
 	}
 
 	.item-carousel-one {
@@ -22,12 +26,8 @@
 		}
 
 		@media (min-width: 768px) {
-		  background-size: 100%;		
-		  height: 500px;
-		}
-
-		@media (min-width: 768px) {
-		 height: 700px;
+			background-size: 100%;
+		 	height: 500px;
 		}
 
 		@media (min-width: 1200px) { 
@@ -37,7 +37,7 @@
 			/* justify-content: flex-start !important; */
 		}
 
-		a {
+		p {
 			display: inline-block;
 			font-family: 'Nixie One', cursive;
 			background-color: rgba(200,0,0,0.7);
@@ -45,6 +45,7 @@
 			font-size: 25px;
 			width: 100%;
 			text-align: center;
+			margin-bottom: 0;
 			@media (min-width: 576px) { font-size: 40px; }
 			@media (min-width: 768px) { }
 			@media (min-width: 992px) { 

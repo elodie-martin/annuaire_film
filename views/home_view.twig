@@ -9,6 +9,7 @@
     <base href="http://localhost:8080/annuaire_film/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/TarekRaafat/autoComplete.js@1.2.0/dist/css/autoComplete.css">
     <link href="https://fonts.googleapis.com/css?family=Nixie+One|Rammetto+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Titan+One" rel="stylesheet">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
@@ -129,21 +130,37 @@
 
 
         {% endblock %}
+
+        {% block welcom %} 
+
+            <div class="welcom-wrapper">
+                
+            </div>
+
+        {% endblock %}    
     </header> <!-- FIN HEADER -->
-    <main class="container-fluid">
+    <main class="container-fluid container-main">
 
 
 
         <div class="owl-one owl-carousel">
-            <!-- // home controller -->
-            {% for elem in films %}
-            <div class="item-carousel-one d-flex flex-column justify-content-end align-items-center" data-id="{{ elem.id }}">
-                <a href="film/show/{{ elem.id }}"> {{ elem.title }} </a>
-            </div>
-            {% endfor %}
+
+        <!-- // home controller -->
+        {% for elem in films %}
+        <a href="film/show/{{ elem.id }}">
+                <div class="item-carousel-one d-flex flex-column justify-content-end align-items-center" data-id="{{ elem.id }}">
+                    <p> {{ elem.title }} </p>          
+                </div>
+            </a> 
+        {% endfor %}
         </div>
 
-
+        <div class="fixed-bottom d-flex justify-content-end mr-4 mb-3">
+            <button type="button" class="btn btn-primary rounded-circle">
+                <i class="fas fa-chevron-up"></i>
+            </button>
+        </div>
+   
         {% block film %}{% endblock %}
         {% block gender %}{% endblock %}
         {% block owners %}{% endblock %}
@@ -246,6 +263,7 @@
     <script src="js/ajax_search_bar.js"></script>
     <script src="js/ajax_poster_films.js"></script>
     <script src="js/carousel.js"></script>
+    <script src="js/info_film.js"></script>
     <script src="js/nav.js"></script>
 
 </body>

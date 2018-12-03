@@ -4,6 +4,8 @@
 @import '_list-img.scss';
 @import '_footer.scss';
 @import '_moovie.scss';
+@import '_welcom.scss';
+
 
 
 #autoComplete:hover {
@@ -13,3 +15,9 @@
 .container-fluid {
 	padding: 0px;
 }
+
+body {
+	margin: 40px 0px 0px 0px;
+}
+
+button:focus {outline:0;}

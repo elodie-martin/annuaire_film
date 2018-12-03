@@ -4,13 +4,17 @@
 
 <!-- // TOUT LES FILMS PAR LEURS GENRE -->
 
-<div class="container">
-    <div class="row">
-        {% for elem in film %}
 
-        <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 p-1">
-            <a href="/annuaire_film/film/show/{{ elem.mId }}">
-                <div class="mycard mycard-list" data-id="{{ elem.mId }}">
+    <div class="container container-list">
+        <div class="row d-flex justify-content-center">
+            {% for elem in film %}
+    
+                <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 p-1">
+                    <a href="/annuaire_film/film/show/{{ elem.mId }}">
+                        <div class="mycard mycard-list" data-id="{{ elem.mId }}">
+                                
+                        </div>
+                    </a>
 
                 </div>
             </a>
