@@ -34,14 +34,14 @@
             <div class="col-2 p-0">Loupe</div>
         </nav>
 
-        <div id="collapseOneLg" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div id="collapseOneLg" class="collapse d-none" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
                 {% for gender in genders %}
                 <a class="col-3" href="/annuaire_film/gender/list/{{ gender.id }}"> {{ gender.name }} </a>
                 {% endfor %}
             </div>
         </div>
-        <div id="collapseTwoLg" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+        <div id="collapseTwoLg" class="collapse d-none" aria-labelledby="headingTwo" data-parent="#accordion">
             <div class="card-body ">
                 {% for owner in owners %}
                 <a class="col-6" href="/annuaire_film/owners/list/{{ owner.id }}"> {{ owner.name }}&nbsp;{{
@@ -50,7 +50,7 @@
                 {% endfor %}
             </div>
         </div>
-        <div id="collapseThreeLg" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+        <div id="collapseThreeLg" class="collapse d-none" aria-labelledby="headingThree" data-parent="#accordion">
             <div class="card-body">
                 {% for date in years %}
                 <a class="col-3" href="/annuaire_film/years/list/{{ date.releaseDate }}"> {{ date.releaseDate
