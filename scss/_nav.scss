@@ -2,6 +2,7 @@ header {
 
     font-family: "Nixie One", cursive;
     background-color: #000000;
+    
 
     nav {
 
@@ -22,16 +23,12 @@ header {
             }
         }
 
-        div {
-            color: #8b0a15 !important
-        }
-
     }
 
     .accordion {
 
         #headingOne {
-            background-color: #000000;
+            background-color: #111111;
 
             h5 {
                 button {
@@ -51,7 +48,7 @@ header {
         }
 
         #headingTwo {
-            background-color: #000000;
+            background-color: #111111;
 
             h5 {
                 button {
@@ -71,7 +68,7 @@ header {
         }
 
         #headingThree {
-            background-color: #000000;
+            background-color: #111111;
 
             h5 {
                 button {
@@ -90,5 +87,15 @@ header {
 
         }
     }
-
+    
 }
+
+@media (max-width: 575px) {}
+
+@media (min-width: 576px) and (max-width: 767px) {}
+
+@media (min-width: 768px) and (max-width: 991px) {}
+
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+@media (min-width: 1200px) {}
