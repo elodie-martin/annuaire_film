@@ -4,15 +4,13 @@
 
     <!-- // Chaques films est affiché sous forme de carte qui défileront dans un carroussel  -->   
     <div class="container container-list">
-        <div class="row d-flex justify-content-center">
+        <div class="row">
             {% for elem in film %}
     
-                <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 p-1 mx-sm-auto">
-                    <a href="/annuaire_film/film/show/{{ elem.mId }}">
-                        <div class="mycard mycard-list" data-id="{{ elem.mId }}">
-                                
-                        </div>
-                    </a>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 p-1">
+                    <div class="mycard mycard-list d-flex flex-column justify-content-end align-items-center" data-url="/annuaire_film/film/show/{{ elem.mId }}" data-id="{{ elem.mId }}">
+                        <p><a href="/annuaire_film/years/list/{{ elem.releaseDate }}">{{ elem.releaseDate }}</a></p>
+                    </div>
                 </div>
 
         {% endfor %}
