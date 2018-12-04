@@ -20,7 +20,7 @@
 
         .moovie-h1 {
         	font-weight: bold;
-        	font-size: 25px;
+        	font-size: 20px;
         	width: 100%;
         	margin: 0;
         	padding-right: 50px;
@@ -61,7 +61,7 @@
         }
 
         @media (min-width: 768px) {
-            width: 50%;
+            width: 70%;
             height: 750px;
             margin: 0 auto;
 
@@ -69,6 +69,9 @@
 
         @media (min-width: 1200px) {
             height: 1000px;
+            width: 40%;
+            background-position: top;
+
         }
 
         .moovie {
@@ -99,7 +102,8 @@
                 transition: opacity 0.3s;
                 width: 100%;
                 height: 100%;
-                background-color: rgba(0, 0, 0, 0.8);
+                background-color: rgba(0, 0, 0, 0.95);
+                font-weight: bold;
                 color: white;
                 font-family: 'Nixie One', cursive;
 
@@ -115,7 +119,7 @@
                     width: 100%;
                     text-align: left;
                     padding: 20px 20px;
-                    font-size: 14px;
+                    font-size: 17px;
                     margin: 0;
 
                     @media (min-width: 576px) {
@@ -168,6 +172,10 @@
                                 padding: 5px;
                             }
 
+                        }
+
+                        a:hover {
+                        	text-decoration: none;
                         }
                     }
                 }
