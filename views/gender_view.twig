@@ -5,15 +5,19 @@
 
     <!-- // TOUT LES FILMS PAR LEURS GENRE -->
     <div class="container container-list">
-        <div class="row d-flex justify-content-center">
+        <div class="row">
             {% for elem in film %}
 
-                <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 p-1 m-auto">
-                    <a href="/annuaire_film/film/show/{{ elem.mId }}">
-                        <div class="mycard mycard-list" data-id="{{ elem.mId }}">
-                                
-                        </div>
-                    </a>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 p-1">
+                    <div class="mycard mycard-list d-flex flex-column justify-content-end align-items-center" data-url="/annuaire_film/film/show/{{ elem.mId }}" data-id="{{ elem.mId }}">
+                        <p> 
+                            {% set foo = elem.genresId|split(',') %}
+                            {% set foo2 = elem.genres|split(',') %}
+                            {% for id in foo %}		
+                                <a href="/annuaire_film/gender/list/{{ id }}">{{ foo2[loop.index0] }}</a>
+                            {% endfor %}
+                        </p>
+                    </div>
                 </div>
 
         {% endfor %}

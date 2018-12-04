@@ -26,3 +26,32 @@ window.onload = () => {
 
     
 }
+
+const mycard = document.querySelectorAll('.mycard');
+mycard.forEach(function(element) {
+    element.addEventListener('click', function (e) {
+        e.preventDefault();
+        const currentElement = e.target;
+        let url = "";
+        switch (currentElement.tagName) {
+            case 'DIV':
+                url = currentElement.dataset.url;
+                document.location.href=url;
+                break;
+            
+            case 'P':
+                url = currentElement.parentNode.dataset.url;
+                document.location.href=url;
+                break;
+
+            case 'A':
+                url = currentElement.getAttribute('href');
+                document.location.href=url;
+                break;
+        
+            default:
+                break;
+        }
+        
+    });
+});
