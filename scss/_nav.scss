@@ -12,7 +12,13 @@ header {
         }
         .fas:hover {cursor: pointer}
         h1 {
+            transition: transform 0.5s;
+            &:hover {
+                    color: #8b0a15;
+                    transform: scale(1.5);
+            }
             a {
+                transition: color 0.2s;
                 font-family: 'Titan One', cursive;
                 font-size: 28px;
                 color: #ffffff;
@@ -25,6 +31,10 @@ header {
                 }
                 &:link {
                     color: #8b0a15 ;
+                }
+                &:hover {
+                    color: #8b0a15;
+                    text-decoration: none;
                 }
                 span {
                     color: #8b0a15;
