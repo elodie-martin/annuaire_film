@@ -40,18 +40,19 @@
 		p {
 			display: inline-block;
 			font-family: 'Nixie One', cursive;
-			background-color: rgba(200,0,0,0.7);
+			background-color: rgba(150,0,0,0.90);
 			color: white;
 			font-size: 25px;
 			width: 100%;
 			text-align: center;
 			margin-bottom: 0;
+			font-weight: bold;
 			@media (min-width: 576px) { font-size: 40px; }
 			@media (min-width: 768px) { font-size: 30px;}
 			@media (min-width: 992px) { 
 				min-height: 80px !important;
 				line-height: 80px;
-				background-color: rgba(150,0,0,0.7);
+				background-color: rgba(150,0,0,0.90);
 				font-size: 30px;
 		
 			}
