@@ -4,6 +4,9 @@ header {
     background-color: #000000;
     
     nav {
+            margin: auto;
+            width: 95%;
+        
 
         .fas {
             color: #8b0a15 !important;
@@ -15,7 +18,7 @@ header {
             transition: transform 0.5s;
             &:hover {
                     color: #8b0a15;
-                    transform: scale(1.5);
+                    transform: scale(1.1);
             }
             a {
                 transition: color 0.2s;
