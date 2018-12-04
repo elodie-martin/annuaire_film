@@ -16,9 +16,10 @@
                     </a>
                 </div>
 
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
-</div>
+
 
 {% endblock %}
 
@@ -36,14 +37,27 @@
             <div class="col-2 p-0"></div> // <!-- FUTUR INTEGRATION D'UNE BARRE DE RECHERCHE -->
         </nav>
 
-        <div id="collapseOneLg" class="collapse d-none" aria-labelledby="headingOne" data-parent="#accordion">
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
                 {% for gender in genders %}
                 <a class="col-3" href="/annuaire_film/gender/list/{{ gender.id }}"> {{ gender.name }} </a>
                 {% endfor %}
             </div>
         </div>
-        <div id="collapseTwoLg" class="collapse d-none" aria-labelledby="headingTwo" data-parent="#accordion">
+    </div>
+
+    <!-- Second dropdown item -->
+
+    <div class="card p-0 border-left-0 border-right-0">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="false" aria-controls="collapseTwo">
+                    Réalisateur
+                </button>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
             <div class="card-body ">
                 {% for owner in owners %}
                 <a class="col-6" href="/annuaire_film/owners/list/{{ owner.id }}"> {{ owner.name }}&nbsp;{{
@@ -52,14 +66,27 @@
                 {% endfor %}
             </div>
         </div>
-        <div id="collapseThreeLg" class="collapse d-none" aria-labelledby="headingThree" data-parent="#accordion">
+    </div>
+
+    <!-- Troisième dropdown item -->
+
+    <div class="card p-0 border-left-0 border-right-0">
+        <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+                    aria-expanded="false" aria-controls="collapseThree">
+                    Date de sortie
+                </button>
+            </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
             <div class="card-body">
                 {% for date in years %}
-                <a class="col-3" href="/annuaire_film/years/list/{{ date.releaseDate }}"> {{ date.releaseDate
-                    }} </a>
+                <a class="col-3" href="/annuaire_film/years/list/{{ date.releaseDate }}"> {{ date.releaseDate }} </a>
                 {% endfor %}
             </div>
         </div>
+    </div>
 
         <div class="accordion col-12 p-0  d-none" id="accordion">
 
@@ -130,4 +157,5 @@
 
         </div>
 
+</div>
 {% endblock %}
